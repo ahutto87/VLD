@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+/* Bogart Light Font */
+@font-face {
+  font-family: 'Bogart Light';
+  src: url('/fonts/Bogart-Light.woff2') format('woff2'),
+       url('/fonts/Bogart-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bogart Light';
+  src: url('/fonts/Bogart-Light-Italic.woff2') format('woff2'),
+       url('/fonts/Bogart-Light-Italic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;  
+  font-display: swap;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-lato;
+    color: #D17D44;
+    background: #FAF3E3 url('/watercolor-pattern-2.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bogart Light', serif;
+    font-weight: 200;
+    color: #D17D44;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-coral-300 hover:bg-coral-200 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-soft hover:shadow-warm;
+  }
+  
+  .btn-secondary {
+    @apply bg-sage-300 hover:bg-sage-200 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-soft;
+  }
+  
+  .card {
+    @apply rounded-2xl shadow-soft p-6;
+    background-color: #FAF3E3;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-12;
+  }
+  
+  .logo-transparent {
+    background: transparent !important;
+    mix-blend-mode: multiply;
+  }
+  
+  /* Override gray text colors with brown */
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-500 {
+    color: #D17D44 !important;
+  }
+  
+  /* Ensure sections don't block watercolor background */
+  section:not(footer) {
+    background: transparent !important;
+  }
+}

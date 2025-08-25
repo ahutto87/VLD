@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mi",
+    "services": "Servicios",
+    "hypnobirthing": "HypnoBirthing®",
+    "coaching": "Coaching",
+    "calculator": "Calculadora",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Empoderando tu Travesia al Nacimiento",
+    "subtitle": "Servicios profesionales de doula y educación de HypnoBirthing® con Viomar Güerere",
+    "description": "Apoyando a las familias durante el embarazo, parto y postparto con cuidado compasivo y basado en evidencia en inglés y español.",
+    "cta_consultation": "Reservar Consulta",
+    "cta_learn_more": "Saber Más"
+  },
+  "about": {
+    "title": "Acerca de Vio La Doula",
+    "subtitle": "Tu Doula Latina",
+    "intro": "Soy Vio, doula latina, educadora de HypnoBirthing® y coach de maternidad. Acompaño a mujeres y familias a vivir el embarazo, parto y posparto con confianza, calma y conexión. Mi enfoque une el poder del cuerpo, la mente y el corazón para que vivas tu maternidad desde tu verdad y con el apoyo que mereces.",
+    "credentials": "Certificaciones y Formación",
+    "experience": "Años de Experiencia",
+    "families_served": "Familias Atendidas",
+    "languages": "Idiomas Hablados"
+  },
+  "services": {
+    "title": "Apoyo de Parto y Postparto",
+    "subtitle": "Paquetes integrales de doula adaptados a tus necesidades",
+    "basic": {
+      "name": "Apoyo Básico de Parto",
+      "price": "$800",
+      "description": "Apoyo esencial para tu experiencia de parto",
+      "features": [
+        "2 visitas prenatales",
+        "Apoyo continuo durante el parto",
+        "1 visita postparto",
+        "Apoyo por teléfono/texto",
+        "Asistencia con plan de parto"
+      ]
+    },
+    "complete": {
+      "name": "Experiencia Completa de Parto",
+      "price": "$1,200",
+      "description": "Apoyo integral desde el embarazo hasta el postparto",
+      "features": [
+        "3 visitas prenatales",
+        "Apoyo continuo durante el parto",
+        "2 visitas postparto",
+        "Apoyo telefónico 24/7",
+        "Creación de plan de parto",
+        "Entrenamiento de la pareja"
+      ]
+    },
+    "postpartum": {
+      "name": "Paquete de Cuidado Postparto",
+      "price": "$600",
+      "description": "Apoyo dedicado para tu cuarto trimestre",
+      "features": [
+        "4 visitas postparto",
+        "Educación sobre cuidado del recién nacido",
+        "Preparación de comidas",
+        "Tareas domésticas ligeras",
+        "Apoyo emocional"
+      ]
+    },
+    "full_spectrum": {
+      "name": "Apoyo Integral Completo",
+      "price": "$1,600",
+      "description": "Viaje completo de cuidado desde el embarazo hasta el postparto",
+      "features": [
+        "4 visitas prenatales",
+        "Apoyo continuo durante el parto",
+        "4 visitas postparto",
+        "Línea de apoyo 24/7",
+        "Creación de plan de parto",
+        "Entrenamiento de pareja",
+        "Educación sobre cuidado del recién nacido"
+      ]
+    }
+  },
+  "hypnobirthing": {
+    "title": "Clases de HypnoBirthing®",
+    "subtitle": "Transforma tu experiencia de parto con relajación y atención plena",
+    "description": "Aprende técnicas para reducir el miedo y el dolor mientras aumentas la confianza y el control durante el parto.",
+    "course_info": {
+      "duration": "Curso de 5 semanas",
+      "format": "Presencial, Virtual o Híbrido",
+      "price": "$350 por pareja (curso grupal) | $595 por pareja (individual)",
+      "language": "Disponible en inglés y español"
+    },
+    "what_you_learn": "Lo Que Aprenderás",
+    "benefits": [
+      "Técnicas de relajación profunda",
+      "Métodos de respiración para el parto",
+      "Visualización y afirmaciones",
+      "Técnicas de apoyo para la pareja",
+      "Comprensión del proceso de parto",
+      "Creación de un ambiente positivo de parto"
+    ],
+    "enroll_now": "Inscríbete Ahora"
+  },
+  "coaching": {
+    "title": "Coaching de Maternidad",
+    "subtitle": "Apoyo personalizado para tu viaje de crianza",
+    "description": "Sesiones individuales de coaching para apoyarte durante el embarazo, parto y maternidad temprana.",
+    "session_types": {
+      "prenatal": {
+        "name": "Coaching Prenatal",
+        "price": "$75/sesión",
+        "description": "Prepárate mental y emocionalmente para el parto y la paternidad"
+      },
+      "postpartum": {
+        "name": "Apoyo Postparto",
+        "price": "$75/sesión",
+        "description": "Navega los desafíos de la maternidad temprana con confianza"
+      }
+    },
+    "book_session": "Reservar Sesión"
+  },
+  "calculator": {
+    "title": "Calculadora de Fecha de Parto",
+    "subtitle": "Sigue tu viaje de embarazo",
+    "last_period": "Primer día de la última menstruación",
+    "cycle_length": "Duración promedio del ciclo (días)",
+    "calculate": "Calcular Fecha de Parto",
+    "results": {
+      "due_date": "Fecha Estimada de Parto",
+      "weeks_pregnant": "Semanas de Embarazo",
+      "trimester": "Trimestre Actual",
+      "days_remaining": "Días Restantes"
+    },
+    "disclaimer": "Esta calculadora proporciona solo estimaciones. Consulta a tu proveedor de salud para consejos médicos."
+  },
+  "blog": {
+    "title": "Recursos e Información",
+    "subtitle": "Información basada en evidencia para tu viaje",
+    "categories": {
+      "all": "Todas las Publicaciones",
+      "birth_stories": "Historias de Parto",
+      "hypnobirthing": "HypnoBirthing®",
+      "pregnancy": "Embarazo",
+      "postpartum": "Postparto",
+      "wellness": "Bienestar"
+    },
+    "read_more": "Leer Más",
+    "search_placeholder": "Buscar artículos..."
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Lista para comenzar tu viaje de parto con apoyo?",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "due_date": "Fecha de Parto",
+      "service": "Interés en Servicios",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    },
+    "info": {
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "location": "Sirviendo el Área Metropolitana del Norte de Houston",
+      "hours": "Disponible 24/7 para apoyo de parto"
+    }
+  },
+  "footer": {
+    "tagline": "Apoyando a las familias con cuidado compasivo basado en evidencia",
+    "quick_links": "Enlaces Rápidos",
+    "services_links": "Servicios",
+    "contact_info": "Contacto",
+    "follow_us": "Síguenos",
+    "copyright": "© 2024 Vio La Doula. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "common": {
+    "book_now": "Reservar Ahora",
+    "learn_more": "Saber Más",
+    "get_started": "Comenzar",
+    "contact_me": "Contáctame",
+    "view_all": "Ver Todo",
+    "loading": "Cargando...",
+    "error": "Algo salió mal. Por favor intenta de nuevo.",
+    "success": "¡Éxito! Gracias por tu mensaje."
+  }
+}

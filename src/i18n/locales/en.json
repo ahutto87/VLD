@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "hypnobirthing": "HypnoBirthing®",
+    "coaching": "Coaching",
+    "calculator": "Calculator",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Empowering Your Birth Journey",
+    "subtitle": "Professional doula services and HypnoBirthing® education with Viomar Güerere",
+    "description": "Supporting families through pregnancy, birth, and postpartum with compassionate, evidence-based care in English and Spanish.",
+    "cta_consultation": "Book Consultation",
+    "cta_learn_more": "Learn More"
+  },
+  "about": {
+    "title": "About Vio La Doula",
+    "subtitle": "Your Doula Latina",
+    "intro": "I'm Vio — a Latina doula, HypnoBirthing® educator, and motherhood coach. I support women and families through pregnancy, birth, and postpartum with calm, confidence, and connection. My approach brings together the power of the body, mind, and heart so you can experience motherhood rooted in your truth and supported every step of the way.",
+    "credentials": "Certifications & Training",
+    "experience": "Years of Experience",
+    "families_served": "Families Served",
+    "languages": "Languages Spoken"
+  },
+  "services": {
+    "title": "Birth & Postpartum Support",
+    "subtitle": "Comprehensive doula packages tailored to your needs",
+    "basic": {
+      "name": "Basic Birth Support",
+      "price": "$800",
+      "description": "Essential support for your birth experience",
+      "features": [
+        "2 prenatal visits",
+        "Continuous labor support",
+        "1 postpartum visit",
+        "Phone/text support",
+        "Birth plan assistance"
+      ]
+    },
+    "complete": {
+      "name": "Complete Birth Experience",
+      "price": "$1,200",
+      "description": "Comprehensive support from pregnancy to postpartum",
+      "features": [
+        "3 prenatal visits",
+        "Continuous labor support",
+        "2 postpartum visits",
+        "24/7 phone support",
+        "Birth plan creation",
+        "Partner support training"
+      ]
+    },
+    "postpartum": {
+      "name": "Postpartum Care Package",
+      "price": "$600",
+      "description": "Dedicated support for your fourth trimester",
+      "features": [
+        "4 postpartum visits",
+        "Newborn care education",
+        "Meal preparation",
+        "Light household tasks",
+        "Emotional support"
+      ]
+    },
+    "full_spectrum": {
+      "name": "Full Spectrum Support",
+      "price": "$1,600",
+      "description": "Complete care journey from pregnancy through postpartum",
+      "features": [
+        "4 prenatal visits",
+        "Continuous labor support",
+        "4 postpartum visits",
+        "24/7 support line",
+        "Birth plan creation",
+        "Partner training",
+        "Newborn care education"
+      ]
+    }
+  },
+  "hypnobirthing": {
+    "title": "HypnoBirthing® Classes",
+    "subtitle": "Transform your birth experience with relaxation and mindfulness",
+    "description": "Learn techniques to reduce fear and pain while increasing confidence and control during childbirth.",
+    "course_info": {
+      "duration": "5-week course",
+      "format": "In-person, Virtual, or Hybrid",
+      "price": "$350 per couple (group course) | $595 per couple (one-on-one)",
+      "language": "Available in English and Spanish"
+    },
+    "what_you_learn": "What You'll Learn",
+    "benefits": [
+      "Deep relaxation techniques",
+      "Breathing methods for labor",
+      "Visualization and affirmations",
+      "Partner support techniques",
+      "Understanding the birth process",
+      "Creating a positive birth environment"
+    ],
+    "enroll_now": "Enroll Now"
+  },
+  "coaching": {
+    "title": "Motherhood Coaching",
+    "subtitle": "Personalized support for your parenting journey",
+    "description": "One-on-one coaching sessions to support you through pregnancy, birth, and early motherhood.",
+    "session_types": {
+      "prenatal": {
+        "name": "Prenatal Coaching",
+        "price": "$75/session",
+        "description": "Prepare mentally and emotionally for birth and parenthood"
+      },
+      "postpartum": {
+        "name": "Postpartum Support",
+        "price": "$75/session", 
+        "description": "Navigate the challenges of early motherhood with confidence"
+      }
+    },
+    "book_session": "Book Session"
+  },
+  "calculator": {
+    "title": "Due Date Calculator",
+    "subtitle": "Track your pregnancy journey",
+    "last_period": "First day of last menstrual period",
+    "cycle_length": "Average cycle length (days)",
+    "calculate": "Calculate Due Date",
+    "results": {
+      "due_date": "Estimated Due Date",
+      "weeks_pregnant": "Weeks Pregnant", 
+      "trimester": "Current Trimester",
+      "days_remaining": "Days Remaining"
+    },
+    "disclaimer": "This calculator provides estimates only. Consult your healthcare provider for medical advice."
+  },
+  "blog": {
+    "title": "Resources & Insights",
+    "subtitle": "Evidence-based information for your journey",
+    "categories": {
+      "all": "All Posts",
+      "birth_stories": "Birth Stories",
+      "hypnobirthing": "HypnoBirthing®",
+      "pregnancy": "Pregnancy",
+      "postpartum": "Postpartum",
+      "wellness": "Wellness"
+    },
+    "read_more": "Read More",
+    "search_placeholder": "Search articles..."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to begin your supported birth journey?",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number", 
+      "due_date": "Due Date",
+      "service": "Service Interest",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email", 
+      "location": "Serving Greater North Houston Area",
+      "hours": "Available 24/7 for birth support"
+    }
+  },
+  "footer": {
+    "tagline": "Supporting families with compassionate, evidence-based care",
+    "quick_links": "Quick Links",
+    "services_links": "Services",
+    "contact_info": "Contact",
+    "follow_us": "Follow Us",
+    "copyright": "© 2024 Vio La Doula. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "book_now": "Book Now",
+    "learn_more": "Learn More",
+    "get_started": "Get Started",
+    "contact_me": "Contact Me",
+    "view_all": "View All",
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "success": "Success! Thank you for your message."
+  }
+}
