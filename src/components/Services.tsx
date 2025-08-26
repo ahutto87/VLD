@@ -5,6 +5,7 @@ import { SectionDivider } from './DecorativeElements';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
+  // Force rebuild
 
   const packages = [
     {
