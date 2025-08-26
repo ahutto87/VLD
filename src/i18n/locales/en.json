@@ -30,53 +30,39 @@
     "subtitle": "Comprehensive doula packages tailored to your needs",
     "basic": {
       "name": "Basic Birth Support",
-      "price": "$800",
+      "price": "$1,300",
       "description": "Essential support for your birth experience",
       "features": [
-        "2 prenatal visits",
-        "Continuous labor support",
+        "1 prenatal visit",
+        "Continuous support through pregnancy (phone/text)",
+        "Labor support",
         "1 postpartum visit",
-        "Phone/text support",
-        "Birth plan assistance"
+        "Birth plan creation"
       ]
     },
     "complete": {
       "name": "Complete Birth Experience",
-      "price": "$1,200",
+      "price": "$1,500",
       "description": "Comprehensive support from pregnancy to postpartum",
       "features": [
-        "3 prenatal visits",
-        "Continuous labor support",
+        "2 prenatal visits",
+        "Continuous support through pregnancy (phone/text)",
+        "Labor support",
         "2 postpartum visits",
-        "24/7 phone support",
-        "Birth plan creation",
-        "Partner support training"
-      ]
-    },
-    "postpartum": {
-      "name": "Postpartum Care Package",
-      "price": "$600",
-      "description": "Dedicated support for your fourth trimester",
-      "features": [
-        "4 postpartum visits",
-        "Newborn care education",
-        "Meal preparation",
-        "Light household tasks",
-        "Emotional support"
+        "Birth plan creation"
       ]
     },
     "full_spectrum": {
-      "name": "Full Spectrum Support",
-      "price": "$1,600",
-      "description": "Complete care journey from pregnancy through postpartum",
+      "name": "Complete Birth Experience + HypnoBirthing®",
+      "price": "$1,800",
+      "description": "Complete birth support plus HypnoBirthing® education",
       "features": [
-        "4 prenatal visits",
-        "Continuous labor support",
-        "4 postpartum visits",
-        "24/7 support line",
+        "2 prenatal visits",
+        "Continuous support through pregnancy (phone/text)",
+        "Labor support",
+        "2 postpartum visits",
         "Birth plan creation",
-        "Partner training",
-        "Newborn care education"
+        "HypnoBirthing® training"
       ]
     }
   },

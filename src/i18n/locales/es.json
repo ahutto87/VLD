@@ -30,53 +30,39 @@
     "subtitle": "Paquetes integrales de doula adaptados a tus necesidades",
     "basic": {
       "name": "Apoyo Básico de Parto",
-      "price": "$800",
+      "price": "$1,300",
       "description": "Apoyo esencial para tu experiencia de parto",
       "features": [
-        "2 visitas prenatales",
-        "Apoyo continuo durante el parto",
+        "1 visita prenatal",
+        "Apoyo continuo durante el embarazo (teléfono/texto)",
+        "Apoyo durante el parto",
         "1 visita postparto",
-        "Apoyo por teléfono/texto",
-        "Asistencia con plan de parto"
+        "Creación de plan de parto"
       ]
     },
     "complete": {
       "name": "Experiencia Completa de Parto",
-      "price": "$1,200",
+      "price": "$1,500",
       "description": "Apoyo integral desde el embarazo hasta el postparto",
       "features": [
-        "3 visitas prenatales",
-        "Apoyo continuo durante el parto",
+        "2 visitas prenatales",
+        "Apoyo continuo durante el embarazo (teléfono/texto)",
+        "Apoyo durante el parto",
         "2 visitas postparto",
-        "Apoyo telefónico 24/7",
-        "Creación de plan de parto",
-        "Entrenamiento de la pareja"
-      ]
-    },
-    "postpartum": {
-      "name": "Paquete de Cuidado Postparto",
-      "price": "$600",
-      "description": "Apoyo dedicado para tu cuarto trimestre",
-      "features": [
-        "4 visitas postparto",
-        "Educación sobre cuidado del recién nacido",
-        "Preparación de comidas",
-        "Tareas domésticas ligeras",
-        "Apoyo emocional"
+        "Creación de plan de parto"
       ]
     },
     "full_spectrum": {
-      "name": "Apoyo Integral Completo",
-      "price": "$1,600",
-      "description": "Viaje completo de cuidado desde el embarazo hasta el postparto",
+      "name": "Experiencia Completa de Parto + HypnoBirthing®",
+      "price": "$1,800",
+      "description": "Apoyo completo de parto más educación de HypnoBirthing®",
       "features": [
-        "4 visitas prenatales",
-        "Apoyo continuo durante el parto",
-        "4 visitas postparto",
-        "Línea de apoyo 24/7",
+        "2 visitas prenatales",
+        "Apoyo continuo durante el embarazo (teléfono/texto)",
+        "Apoyo durante el parto",
+        "2 visitas postparto",
         "Creación de plan de parto",
-        "Entrenamiento de pareja",
-        "Educación sobre cuidado del recién nacido"
+        "Entrenamiento de HypnoBirthing®"
       ]
     }
   },

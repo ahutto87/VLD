@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Check, Heart, Baby, Home, Users } from 'lucide-react';
+import { Check, Heart, Baby, Users } from 'lucide-react';
 import { SectionDivider } from './DecorativeElements';
 
 const Services: React.FC = () => {
@@ -16,11 +16,6 @@ const Services: React.FC = () => {
       key: 'complete',
       icon: <Baby className="w-8 h-8" />,
       popular: true
-    },
-    {
-      key: 'postpartum',
-      icon: <Home className="w-8 h-8" />,
-      popular: false
     },
     {
       key: 'full_spectrum',
@@ -41,7 +36,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((pkg) => (
             <div
               key={pkg.key}
