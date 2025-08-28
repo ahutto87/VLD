@@ -1,9 +1,23 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FloatingDecor } from './DecorativeElements';
+import { scrollToContact, SERVICES, trackButtonClick } from '../utils/navigation';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
+
+  const handleBookConsultation = () => {
+    trackButtonClick('Hero Book Consultation');
+    scrollToContact(SERVICES.GENERAL_CONSULTATION);
+  };
+
+  const handleLearnMore = () => {
+    trackButtonClick('Hero Learn More');
+    const aboutElement = document.querySelector('#about');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="relative pt-16 min-h-screen flex items-center overflow-hidden">
@@ -32,10 +46,16 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-primary text-center">
+              <button 
+                onClick={handleBookConsultation}
+                className="btn-primary text-center hover:scale-105 transition-transform duration-300"
+              >
                 {t('hero.cta_consultation')}
               </button>
-              <button className="btn-secondary text-center">
+              <button 
+                onClick={handleLearnMore}
+                className="btn-secondary text-center hover:scale-105 transition-transform duration-300"
+              >
                 {t('hero.cta_learn_more')}
               </button>
             </div>
@@ -49,8 +69,13 @@ const Hero: React.FC = () => {
               <div className="aspect-[3/4] flex items-center justify-center">
                 <img 
                   src="/VD_ARCH-LOGO_CREAM.png" 
-                  alt="Vio La Doula - Full Spectrum Doula & Motherhood Coach"
+                  alt="Vio La Doula - Professional Birth Doula and HypnoBirthing Instructor serving Greater North Houston area"
                   className="w-full h-full object-contain logo-transparent"
+                  width="500"
+                  height="500"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
               

@@ -39,8 +39,12 @@ const Header: React.FC = () => {
             <div className="flex items-center">
               <img 
                 src="/VD_SECONDARY-LOGO_CREAM.png" 
-                alt="Vio La Doula Logo"
+                alt="Vio La Doula - Professional Doula Services Houston"
                 className="w-12 h-12 object-contain"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
               />
               <div className="ml-3">
                 <h1 className="text-xl font-bold text-gray-800">Vio La Doula</h1>

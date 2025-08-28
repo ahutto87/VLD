@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { 
@@ -14,6 +14,9 @@ import {
   Minus
 } from 'lucide-react';
 import { FloralBorder } from './DecorativeElements';
+import { sendContactForm } from '../utils/emailService';
+import type { ServiceInfo } from '../utils/navigation';
+import { trackButtonClick } from '../utils/navigation';
 
 interface ContactFormData {
   name: string;
@@ -28,23 +31,28 @@ const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [preSelectedService, setPreSelectedService] = useState<string>('');
   
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitting }
   } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Contact form submitted:', data);
-      setIsSubmitted(true);
-      reset();
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
+      const success = await sendContactForm(data);
+      if (success) {
+        setIsSubmitted(true);
+        reset();
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        console.error('Failed to send email');
+        // Could add error state here
+      }
     } catch (error) {
       console.error('Form submission error:', error);
     }
@@ -52,9 +60,8 @@ const Contact: React.FC = () => {
 
   const serviceOptions = [
     'Basic Birth Support',
-    'Complete Birth Experience', 
-    'Postpartum Care Package',
-    'Full Spectrum Support',
+    'Complete Birth Experience',
+    'Complete Birth Experience + HypnoBirthing®',
     'HypnoBirthing® Classes',
     'Motherhood Coaching',
     'General Consultation'
@@ -90,6 +97,39 @@ const Contact: React.FC = () => {
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
+
+  const handleScheduleConsultation = () => {
+    trackButtonClick('Contact Schedule Consultation');
+    const formElement = document.querySelector('#contact form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setValue('service', 'General Consultation');
+      setPreSelectedService('General Consultation');
+    }
+  };
+
+  // Listen for service pre-population events
+  useEffect(() => {
+    const handleServicePrePopulation = (event: CustomEvent<ServiceInfo>) => {
+      const serviceName = event.detail.name;
+      setPreSelectedService(serviceName);
+      setValue('service', serviceName);
+      
+      // Scroll to form after a brief delay
+      setTimeout(() => {
+        const formElement = document.querySelector('#contact form');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 500);
+    };
+
+    window.addEventListener('prePopulateService', handleServicePrePopulation as EventListener);
+    
+    return () => {
+      window.removeEventListener('prePopulateService', handleServicePrePopulation as EventListener);
+    };
+  }, [setValue]);
 
   return (
     <section id="contact" className="section-padding">
@@ -195,7 +235,9 @@ const Contact: React.FC = () => {
                   </label>
                   <select
                     {...register('service')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-coral-300 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-coral-300 focus:border-transparent transition-all duration-300 ${
+                      preSelectedService ? 'border-coral-300 bg-coral-50' : 'border-gray-300'
+                    }`}
                   >
                     <option value="">Select a service...</option>
                     {serviceOptions.map((service) => (
@@ -204,6 +246,11 @@ const Contact: React.FC = () => {
                       </option>
                     ))}
                   </select>
+                  {preSelectedService && (
+                    <p className="mt-1 text-sm text-coral-600">
+                      ✨ {preSelectedService} pre-selected for you
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -257,7 +304,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">{t('contact.info.phone')}</h4>
-                    <p className="text-gray-600">(512) 555-DOULA</p>
+                    <p className="text-gray-600">(346) 380-8476</p>
                     <p className="text-sm text-gray-500 mt-1">Call or text anytime</p>
                   </div>
                 </div>
@@ -268,7 +315,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">{t('contact.info.email')}</h4>
-                    <p className="text-gray-600">hello@violadoula.com</p>
+                    <p className="text-gray-600">violadoula@gmail.com</p>
                     <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
                   </div>
                 </div>
@@ -341,7 +388,10 @@ const Contact: React.FC = () => {
                 <p className="text-gray-600 mb-4">
                   Schedule your free 30-minute consultation to discuss your birth vision and see if we're a good fit.
                 </p>
-                <button className="btn-primary">
+                <button 
+                  onClick={handleScheduleConsultation}
+                  className="btn-primary hover:scale-105 transition-transform duration-300"
+                >
                   <Calendar className="w-4 h-4 mr-2" />
                   Schedule Free Consultation
                 </button>

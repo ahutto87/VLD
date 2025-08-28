@@ -1,0 +1,34 @@
+# Robots.txt for VioLaDoula.com
+# Professional Doula Services Website
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.violadoula.com/sitemap.xml
+
+# Block access to development and admin files
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: *.json$
+Disallow: *.ts$
+Disallow: *.tsx$
+Disallow: *.js.map$
+
+# Allow important assets
+Allow: /fonts/
+Allow: /images/
+Allow: *.css$
+Allow: *.js$
+Allow: *.png$
+Allow: *.jpg$
+Allow: *.jpeg$
+Allow: *.gif$
+Allow: *.svg$
+Allow: *.woff$
+Allow: *.woff2$
+
+# Crawl delay (optional)
+Crawl-delay: 1

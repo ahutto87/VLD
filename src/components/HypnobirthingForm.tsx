@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { Calendar, Clock, MapPin, Globe, CheckCircle } from 'lucide-react';
+import { sendHypnoBirthingEnrollment } from '../utils/emailService';
 
 interface FormData {
   fullName: string;
@@ -30,11 +31,14 @@ const HypnobirthingForm: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Form submitted:', data);
-      setIsSubmitted(true);
-      reset();
+      const success = await sendHypnoBirthingEnrollment(data);
+      if (success) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        console.error('Failed to send enrollment email');
+        // Could add error state here in the future
+      }
     } catch (error) {
       console.error('Form submission error:', error);
     }

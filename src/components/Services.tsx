@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Check, Heart, Baby, Users } from 'lucide-react';
 import { SectionDivider } from './DecorativeElements';
+import { scrollToContact, SERVICES, trackButtonClick } from '../utils/navigation';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
@@ -11,19 +12,32 @@ const Services: React.FC = () => {
     {
       key: 'basic',
       icon: <Heart className="w-8 h-8" />,
-      popular: false
+      popular: false,
+      service: SERVICES.BASIC_BIRTH_SUPPORT
     },
     {
       key: 'complete',
       icon: <Baby className="w-8 h-8" />,
-      popular: true
+      popular: true,
+      service: SERVICES.COMPLETE_BIRTH_EXPERIENCE
     },
     {
       key: 'full_spectrum',
       icon: <Users className="w-8 h-8" />,
-      popular: false
+      popular: false,
+      service: SERVICES.FULL_SPECTRUM_SUPPORT
     }
   ];
+
+  const handleBookNow = (packageService: typeof SERVICES[keyof typeof SERVICES]) => {
+    trackButtonClick('Services Book Now', packageService.name);
+    scrollToContact(packageService);
+  };
+
+  const handleScheduleConsultation = () => {
+    trackButtonClick('Services Schedule Consultation');
+    scrollToContact(SERVICES.GENERAL_CONSULTATION);
+  };
 
   return (
     <section id="services" className="section-padding">
@@ -85,11 +99,14 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
-                  pkg.popular
-                    ? 'bg-coral-300 hover:bg-coral-200 text-white shadow-warm'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
-                }`}>
+                <button 
+                  onClick={() => handleBookNow(pkg.service)}
+                  className={`w-full py-3 px-4 rounded-xl font-medium transition-all duration-300 hover:scale-105 ${
+                    pkg.popular
+                      ? 'bg-coral-300 hover:bg-coral-200 text-white shadow-warm'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
+                  }`}
+                >
                   {t('common.book_now')}
                 </button>
               </div>
@@ -126,7 +143,10 @@ const Services: React.FC = () => {
             </div>
           </div>
 
-          <button className="btn-primary">
+          <button 
+            onClick={handleScheduleConsultation}
+            className="btn-primary hover:scale-105 transition-transform duration-300"
+          >
             Schedule Free Consultation
           </button>
         </div>

@@ -44,8 +44,12 @@ const About: React.FC = () => {
               <div className="aspect-square rounded-3xl shadow-warm overflow-hidden">
                 <img 
                   src="/Viomar_Professional_Portrait.jpg" 
-                  alt="Vio - Professional Doula Portrait"
+                  alt="Viomar Güerere (Vio) - Certified Birth Doula, HypnoBirthing Instructor, and Motherhood Coach in Houston, Texas"
                   className="w-full h-full object-cover object-center"
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

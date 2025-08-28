@@ -13,6 +13,7 @@ import {
   Users,
   MessageCircle
 } from 'lucide-react';
+import { trackButtonClick } from '../utils/navigation';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -40,6 +41,11 @@ const Footer: React.FC = () => {
     }
   };
 
+  const handleFreeConsultation = () => {
+    trackButtonClick('Footer Free Consultation');
+    scrollToSection('#contact');
+  };
+
   return (
     <footer style={{ backgroundColor: '#D17D44', color: '#FAF3E3' }}>
       {/* Main Footer Content */}
@@ -50,8 +56,12 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-4">
               <img 
                 src="/VD_SECONDARY-LOGO_CREAM.png" 
-                alt="Vio La Doula Logo"
+                alt="Vio La Doula - Professional Doula Services Houston"
                 className="w-12 h-12 object-contain mr-3"
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
               />
               <div>
                 <h3 className="text-xl font-bold" style={{ color: '#FAF3E3' }}>Vio La Doula</h3>
@@ -143,7 +153,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-coral-300 flex-shrink-0" />
                 <div>
-                  <p className="text-cream-50">(512) 555-DOULA</p>
+                  <p className="text-cream-50">(346) 380-8476</p>
                   <p className="text-xs text-cream-50">Available 24/7</p>
                 </div>
               </div>
@@ -151,7 +161,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-coral-300 flex-shrink-0" />
                 <div>
-                  <p className="text-cream-50">hello@violadoula.com</p>
+                  <p className="text-cream-50">violadoula@gmail.com</p>
                   <p className="text-xs text-cream-50">Response within 24hrs</p>
                 </div>
               </div>
@@ -168,8 +178,8 @@ const Footer: React.FC = () => {
             {/* CTA Button */}
             <div className="mt-6">
               <button
-                onClick={() => scrollToSection('#contact')}
-                className="w-full bg-coral-300 hover:bg-coral-200 text-cream-50 px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                onClick={handleFreeConsultation}
+                className="w-full bg-coral-300 hover:bg-coral-200 text-cream-50 px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Free Consultation</span>
@@ -223,7 +233,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-2">
           <div className="flex items-center justify-center space-x-4 text-sm">
             <Heart className="w-4 h-4" />
-            <span className="font-medium">In active labor? Call or text (512) 555-DOULA immediately</span>
+            <span className="font-medium">In active labor? Call or text (346) 380-8476 immediately</span>
             <Heart className="w-4 h-4" />
           </div>
         </div>

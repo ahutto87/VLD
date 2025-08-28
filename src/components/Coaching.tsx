@@ -1,9 +1,20 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { MessageCircle, Heart, Baby, Calendar, Clock } from 'lucide-react';
+import { scrollToContact, SERVICES, trackButtonClick } from '../utils/navigation';
 
 const Coaching: React.FC = () => {
   const { t } = useTranslation();
+
+  const handleBookSession = () => {
+    trackButtonClick('Coaching Book Session');
+    scrollToContact(SERVICES.MOTHERHOOD_COACHING);
+  };
+
+  const handleBookConsultation = () => {
+    trackButtonClick('Coaching Book Consultation');
+    scrollToContact(SERVICES.GENERAL_CONSULTATION);
+  };
 
   const sessionTypes = [
     {
@@ -59,7 +70,10 @@ const Coaching: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full btn-primary">
+                <button 
+                  onClick={handleBookSession}
+                  className="w-full btn-primary hover:scale-105 transition-transform duration-300"
+                >
                   {t('coaching.book_session')}
                 </button>
               </div>
@@ -172,7 +186,10 @@ const Coaching: React.FC = () => {
             Book a complimentary 15-minute consultation to discuss your needs and see if coaching is right for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
+            <button 
+              onClick={handleBookConsultation}
+              className="btn-primary hover:scale-105 transition-transform duration-300"
+            >
               Book Free Consultation
             </button>
             <button className="btn-secondary">
