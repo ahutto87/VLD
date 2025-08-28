@@ -73,8 +73,8 @@ const Contact: React.FC = () => {
       answer: 'The best time to hire a doula is during your second trimester (around 20-24 weeks), but I accept clients throughout pregnancy and even during labor if needed.'
     },
     {
-      question: 'Do you attend births at all hospitals?',
-      answer: 'Yes, I support births at all hospitals, birth centers, and home births throughout the Greater Austin area. I work collaboratively with your medical team.'
+      question: 'What types of births do you support?',
+      answer: 'I support births at birth centers, home births, and hospitals throughout the Greater North Houston Area. I work collaboratively with your team.'
     },
     {
       question: 'What if my baby comes early or late?',
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
     },
     {
       question: 'Do you accept insurance?',
-      answer: 'While I don\'t directly bill insurance, I can provide receipts for potential reimbursement. Many HSA/FSA accounts cover doula services. I also offer payment plans.'
+      answer: 'I do not accept insurance at the moment. However, I do offer payment plans.'
     }
   ];
 
