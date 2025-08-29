@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.violadoula.com/</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/?lang=en"/>
@@ -16,7 +16,7 @@
   <!-- About Section -->
   <url>
     <loc>https://www.violadoula.com/#about</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#about?lang=en"/>
@@ -27,7 +27,7 @@
   <!-- Services Section -->
   <url>
     <loc>https://www.violadoula.com/#services</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#services?lang=en"/>
@@ -38,7 +38,7 @@
   <!-- HypnoBirthing Section -->
   <url>
     <loc>https://www.violadoula.com/#hypnobirthing</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#hypnobirthing?lang=en"/>
@@ -49,7 +49,7 @@
   <!-- Coaching Section -->
   <url>
     <loc>https://www.violadoula.com/#coaching</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#coaching?lang=en"/>
@@ -60,7 +60,7 @@
   <!-- Due Date Calculator -->
   <url>
     <loc>https://www.violadoula.com/#calculator</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#calculator?lang=en"/>
@@ -71,58 +71,12 @@
   <!-- Contact Section -->
   <url>
     <loc>https://www.violadoula.com/#contact</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/#contact?lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/#contact?lang=es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/#contact"/>
-  </url>
-
-  <!-- Local Service Area Pages (future expansion) -->
-  <!-- The Woodlands -->
-  <url>
-    <loc>https://www.violadoula.com/the-woodlands-doula</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/the-woodlands-doula?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/the-woodlands-doula?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/the-woodlands-doula"/>
-  </url>
-
-  <!-- Individual Service Pages (when routing is implemented) -->
-  <!-- Birth Doula Services -->
-  <url>
-    <loc>https://www.violadoula.com/services/birth-doula</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/services/birth-doula?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/services/birth-doula?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/services/birth-doula"/>
-  </url>
-
-  <!-- HypnoBirthing Classes -->
-  <url>
-    <loc>https://www.violadoula.com/services/hypnobirthing</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/services/hypnobirthing?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/services/hypnobirthing?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/services/hypnobirthing"/>
-  </url>
-
-  <!-- Motherhood Coaching -->
-  <url>
-    <loc>https://www.violadoula.com/services/coaching</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/services/coaching?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/services/coaching?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/services/coaching"/>
   </url>
 
 </urlset>
