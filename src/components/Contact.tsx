@@ -67,32 +67,10 @@ const Contact: React.FC = () => {
     'General Consultation'
   ];
 
-  const faqs = [
-    {
-      question: 'When should I hire a doula?',
-      answer: 'The best time to hire a doula is during your second trimester (around 20-24 weeks), but I accept clients throughout pregnancy and even during labor if needed.'
-    },
-    {
-      question: 'What types of births do you support?',
-      answer: 'I support births at birth centers, home births, and hospitals throughout the Greater North Houston Area. I work collaboratively with your team.'
-    },
-    {
-      question: 'What if my baby comes early or late?',
-      answer: 'I am on call 24/7 starting at 37 weeks gestation until your baby arrives, regardless of timing. There are no additional fees for early or late births.'
-    },
-    {
-      question: 'Do you provide virtual support?',
-      answer: 'Yes! I offer virtual prenatal visits, labor support via video call, and postpartum consultations for families who prefer remote support or live far away.'
-    },
-    {
-      question: 'What languages do you speak?',
-      answer: 'I provide full doula services in both English and Spanish, ensuring comfortable communication throughout your journey.'
-    },
-    {
-      question: 'Do you accept insurance?',
-      answer: 'I do not accept insurance at the moment. However, I do offer payment plans.'
-    }
-  ];
+  const faqs = t('contact.faq.questions', { returnObjects: true }) as Array<{
+    question: string;
+    answer: string;
+  }>;
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -347,7 +325,7 @@ const Contact: React.FC = () => {
             {/* FAQ Section */}
             <div className="card">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                Frequently Asked Questions
+                {t('contact.faq.title')}
               </h3>
 
               <div className="space-y-3">

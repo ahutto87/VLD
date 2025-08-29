@@ -10,7 +10,7 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Empoderando tu Travesia al Nacimiento",
+    "title": "Acompañándote hacia un Nacimiento Empoderado",
     "subtitle": "Servicios profesionales de doula y educación de HypnoBirthing® con Viomar Güerere",
     "description": "Apoyando a las familias durante el embarazo, parto y postparto con cuidado compasivo y basado en evidencia en inglés y español.",
     "cta_consultation": "Reservar Consulta",
@@ -34,6 +34,7 @@
       "description": "Apoyo esencial para tu experiencia de parto",
       "features": [
         "1 visita prenatal",
+        "Sesión básica de HypnoBirthing®",
         "Apoyo continuo durante el embarazo (teléfono/texto)",
         "Apoyo durante el parto",
         "1 visita postparto",
@@ -46,6 +47,7 @@
       "description": "Apoyo integral desde el embarazo hasta el postparto",
       "features": [
         "2 visitas prenatales",
+        "Sesión básica de HypnoBirthing®",
         "Apoyo continuo durante el embarazo (teléfono/texto)",
         "Apoyo durante el parto",
         "2 visitas postparto",
@@ -150,6 +152,35 @@
       "email": "Correo Electrónico",
       "location": "Sirviendo el Área Metropolitana del Norte de Houston",
       "hours": "Disponible 24/7 para apoyo de parto"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "questions": [
+        {
+          "question": "¿Cuándo debería contratar una doula?",
+          "answer": "El mejor momento para contratar una doula es durante el segundo trimestre (alrededor de las 20-24 semanas), pero acepto clientes durante todo el embarazo e incluso durante el parto si es necesario."
+        },
+        {
+          "question": "¿Qué tipos de partos apoyas?",
+          "answer": "Apoyo partos en centros de parto, partos en casa y hospitales en toda el área metropolitana del norte de Houston. Trabajo en colaboración con tu equipo."
+        },
+        {
+          "question": "¿Qué pasa si mi bebé llega temprano o tarde?",
+          "answer": "Estoy de guardia 24/7 a partir de las 37 semanas de gestación hasta que llegue tu bebé, sin importar el momento. No hay cargos adicionales por partos tempranos o tardíos."
+        },
+        {
+          "question": "¿Proporcionas apoyo virtual?",
+          "answer": "¡Sí! Ofrezco visitas prenatales virtuales, apoyo durante el parto por videollamada y consultas posparto para familias que prefieren apoyo remoto o viven lejos."
+        },
+        {
+          "question": "¿Qué idiomas hablas?",
+          "answer": "Proporciono servicios completos de doula tanto en inglés como en español, asegurando una comunicación cómoda durante todo tu viaje."
+        },
+        {
+          "question": "¿Aceptas seguros?",
+          "answer": "No acepto seguros en este momento. Sin embargo, sí ofrezco planes de pago."
+        }
+      ]
     }
   },
   "footer": {

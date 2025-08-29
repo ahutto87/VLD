@@ -138,7 +138,7 @@ const Services: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <div className="text-lg font-semibold text-coral-300">Final Payment</div>
-                <div className="text-sm text-gray-600">By 37 weeks gestation</div>
+                <div className="text-sm text-gray-600">By 36 weeks gestation</div>
               </div>
             </div>
           </div>
