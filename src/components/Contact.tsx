@@ -14,7 +14,7 @@ import {
   Minus
 } from 'lucide-react';
 import { FloralBorder } from './DecorativeElements';
-import { sendContactForm } from '../utils/emailService';
+import { sendContactForm, sendAutoReply } from '../utils/emailService';
 import type { ServiceInfo } from '../utils/navigation';
 import { trackButtonClick } from '../utils/navigation';
 
@@ -45,8 +45,12 @@ const Contact: React.FC = () => {
     try {
       const success = await sendContactForm(data);
       if (success) {
+        // Send auto-reply confirmation to client
+        await sendAutoReply(data.email, data.name, 'contact');
+        
         setIsSubmitted(true);
         reset();
+        setPreSelectedService('');
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {

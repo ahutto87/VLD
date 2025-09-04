@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-cream-50">{t('footer.follow_us')}</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://instagram.com/violadoula" 
+                  href="https://instagram.com/vio_ladoula" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-700 hover:bg-coral-300 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://facebook.com/violadoula" 
+                  href="https://facebook.com/vio.ladoula" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-700 hover:bg-coral-300 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://youtube.com/@violadoula" 
+                  href="https://youtube.com/@vio_ladoula" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-700 hover:bg-coral-300 rounded-full flex items-center justify-center transition-colors duration-300"

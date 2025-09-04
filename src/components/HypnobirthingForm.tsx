@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { Calendar, Clock, MapPin, Globe, CheckCircle } from 'lucide-react';
-import { sendHypnoBirthingEnrollment } from '../utils/emailService';
+import { sendHypnoBirthingEnrollment, sendAutoReply } from '../utils/emailService';
 
 interface FormData {
   fullName: string;
@@ -33,6 +33,9 @@ const HypnobirthingForm: React.FC = () => {
     try {
       const success = await sendHypnoBirthingEnrollment(data);
       if (success) {
+        // Send auto-reply confirmation to client
+        await sendAutoReply(data.email, data.fullName, 'hypnobirthing');
+        
         setIsSubmitted(true);
         reset();
       } else {
