@@ -27,44 +27,33 @@
   },
   "services": {
     "title": "Birth & Postpartum Support",
-    "subtitle": "Comprehensive doula packages tailored to your needs",
-    "basic": {
-      "name": "Basic Birth Support",
-      "price": "Please contact for pricing",
-      "description": "Essential support for your birth experience",
+    "subtitle": "Comprehensive doula packages tailored to your needs. All doula services include a backup doula.",
+    "essentials": {
+      "name": "The Essentials Package",
+      "price": "$2,200",
+      "description": "The perfect care you need along your journey to parenthood and the arrival of your baby",
       "features": [
-        "1 prenatal visit",
-        "HypnoBirthing® basics session",
-        "Continuous support through pregnancy (phone/text)",
-        "Labor support",
-        "1 postpartum visit",
-        "Birth plan creation"
+        "Unlimited phone + email support from pregnancy to postpartum",
+        "Two (2) in-home prenatal visits with parents",
+        "Birth Plan development",
+        "Unlimited labor support from active labor to birth",
+        "Immediate postpartum + breastfeeding support",
+        "One (1) in-home postpartum visit",
+        "Unlimited postpartum support via phone, text, and email"
       ]
     },
-    "complete": {
-      "name": "Complete Birth Experience",
-      "price": "Please contact for pricing",
-      "description": "Comprehensive support from pregnancy to postpartum",
+    "premium": {
+      "name": "The Premium Package",
+      "price": "$2,400",
+      "description": "Everything you get with the essentials package but with a little extra TLC and pampering",
       "features": [
-        "2 prenatal visits",
-        "HypnoBirthing® basics session",
-        "Continuous support through pregnancy (phone/text)",
-        "Labor support",
-        "2 postpartum visits",
-        "Birth plan creation"
-      ]
-    },
-    "full_spectrum": {
-      "name": "Complete Birth Experience + HypnoBirthing®",
-      "price": "Please contact for pricing",
-      "description": "Complete birth support plus HypnoBirthing® education",
-      "features": [
-        "2 prenatal visits",
-        "Continuous support through pregnancy (phone/text)",
-        "Labor support",
-        "2 postpartum visits",
-        "Birth plan creation",
-        "HypnoBirthing® training"
+        "Unlimited phone + email support from pregnancy to postpartum",
+        "Three (3) in-home prenatal visits with parents",
+        "Birth Plan development",
+        "Unlimited labor support from active labor to birth",
+        "Immediate postpartum + breastfeeding support",
+        "One (1) in-home postpartum visit",
+        "Unlimited postpartum support via phone, text, and email"
       ]
     }
   },

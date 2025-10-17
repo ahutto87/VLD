@@ -10,22 +10,16 @@ const Services: React.FC = () => {
 
   const packages = [
     {
-      key: 'basic',
+      key: 'essentials',
       icon: <Heart className="w-8 h-8" />,
       popular: false,
       service: SERVICES.BASIC_BIRTH_SUPPORT
     },
     {
-      key: 'complete',
+      key: 'premium',
       icon: <Baby className="w-8 h-8" />,
       popular: true,
       service: SERVICES.COMPLETE_BIRTH_EXPERIENCE
-    },
-    {
-      key: 'full_spectrum',
-      icon: <Users className="w-8 h-8" />,
-      popular: false,
-      service: SERVICES.FULL_SPECTRUM_SUPPORT
     }
   ];
 
@@ -51,7 +45,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {packages.map((pkg) => (
             <div
               key={pkg.key}

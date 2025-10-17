@@ -27,44 +27,33 @@
   },
   "services": {
     "title": "Apoyo de Parto y Postparto",
-    "subtitle": "Paquetes integrales de doula adaptados a tus necesidades",
-    "basic": {
-      "name": "Apoyo Básico de Parto",
-      "price": "Por favor contactar para precios",
-      "description": "Apoyo esencial para tu experiencia de parto",
+    "subtitle": "Paquetes integrales de doula adaptados a tus necesidades. Todos los servicios de doula incluyen una doula de respaldo.",
+    "essentials": {
+      "name": "El Paquete Esencial",
+      "price": "$2,200",
+      "description": "El cuidado perfecto que necesitas a lo largo de tu viaje hacia la maternidad y la llegada de tu bebé",
       "features": [
-        "1 visita prenatal",
-        "Sesión básica de HypnoBirthing®",
-        "Apoyo continuo durante el embarazo (teléfono/texto)",
-        "Apoyo durante el parto",
-        "1 visita postparto",
-        "Creación de plan de parto"
+        "Apoyo ilimitado por teléfono y correo electrónico desde el embarazo hasta el postparto",
+        "Dos (2) visitas prenatales en el hogar con los padres",
+        "Desarrollo del plan de parto",
+        "Apoyo ilimitado durante el parto desde el trabajo de parto activo hasta el nacimiento",
+        "Apoyo inmediato postparto + apoyo de lactancia",
+        "Una (1) visita postparto en el hogar",
+        "Apoyo postparto ilimitado por teléfono, texto y correo electrónico"
       ]
     },
-    "complete": {
-      "name": "Experiencia Completa de Parto",
-      "price": "Por favor contactar para precios",
-      "description": "Apoyo integral desde el embarazo hasta el postparto",
+    "premium": {
+      "name": "El Paquete Premium",
+      "price": "$2,400",
+      "description": "Todo lo que obtienes con el paquete esencial pero con un poco de cuidado y mimos extra",
       "features": [
-        "2 visitas prenatales",
-        "Sesión básica de HypnoBirthing®",
-        "Apoyo continuo durante el embarazo (teléfono/texto)",
-        "Apoyo durante el parto",
-        "2 visitas postparto",
-        "Creación de plan de parto"
-      ]
-    },
-    "full_spectrum": {
-      "name": "Experiencia Completa de Parto + HypnoBirthing®",
-      "price": "Por favor contactar para precios",
-      "description": "Apoyo completo de parto más educación de HypnoBirthing®",
-      "features": [
-        "2 visitas prenatales",
-        "Apoyo continuo durante el embarazo (teléfono/texto)",
-        "Apoyo durante el parto",
-        "2 visitas postparto",
-        "Creación de plan de parto",
-        "Entrenamiento de HypnoBirthing®"
+        "Apoyo ilimitado por teléfono y correo electrónico desde el embarazo hasta el postparto",
+        "Tres (3) visitas prenatales en el hogar con los padres",
+        "Desarrollo del plan de parto",
+        "Apoyo ilimitado durante el parto desde el trabajo de parto activo hasta el nacimiento",
+        "Apoyo inmediato postparto + apoyo de lactancia",
+        "Una (1) visita postparto en el hogar",
+        "Apoyo postparto ilimitado por teléfono, texto y correo electrónico"
       ]
     }
   },
