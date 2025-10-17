@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Check, Heart, Baby, Users } from 'lucide-react';
+import { Check, Heart, Baby } from 'lucide-react';
 import { SectionDivider } from './DecorativeElements';
 import { scrollToContact, SERVICES, trackButtonClick } from '../utils/navigation';
 
