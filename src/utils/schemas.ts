@@ -7,14 +7,14 @@ export const personSchema = {
   '@type': 'Person',
   name: 'Viomar Güerere',
   alternateName: 'Vio',
-  description: 'Certified birth doula, HypnoBirthing® instructor, and motherhood coach serving the Greater North Houston area',
+  description: 'Certified full-spectrum doula, HypnoBirthing® educator, and motherhood coach serving the Greater North Houston area',
   image: 'https://www.violadoula.com/Viomar_Professional_Portrait.jpg',
   url: 'https://www.violadoula.com',
   sameAs: [
     'https://www.violadoula.com',
     // Add social media URLs when available
   ],
-  jobTitle: 'Birth Doula & HypnoBirthing® Instructor',
+  jobTitle: 'Full-Spectrum Doula & HypnoBirthing® Educator',
   worksFor: {
     '@type': 'Organization',
     name: 'Vio La Doula'
@@ -41,16 +41,12 @@ export const personSchema = {
   hasCredential: [
     {
       '@type': 'EducationalOccupationalCredential',
-      name: 'Certified Birth Doula',
-      credentialCategory: 'Certification',
-      recognizedBy: {
-        '@type': 'Organization',
-        name: 'Doulas of Discernment'
-      }
+      name: 'Certified Full-Spectrum Doula',
+      credentialCategory: 'Certification'
     },
     {
       '@type': 'EducationalOccupationalCredential',
-      name: 'HypnoBirthing® Instructor',
+      name: 'Certified HypnoBirthing® Educator',
       credentialCategory: 'Certification',
       recognizedBy: {
         '@type': 'Organization',
@@ -59,7 +55,7 @@ export const personSchema = {
     },
     {
       '@type': 'EducationalOccupationalCredential',
-      name: 'Certified Mama Rising Facilitator',
+      name: 'Certified Motherhood Coach',
       credentialCategory: 'Certification'
     },
     {
@@ -124,7 +120,7 @@ export const professionalServiceSchema = {
     '@type': 'Person',
     name: 'Viomar Güerere',
     alternateName: 'Vio',
-    jobTitle: 'Birth Doula & HypnoBirthing® Instructor'
+    jobTitle: 'Full-Spectrum Doula & HypnoBirthing® Educator'
   }
 };
 

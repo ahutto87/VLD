@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
               <div className="aspect-[3/4] flex items-center justify-center">
                 <img 
                   src="/VD_ARCH-LOGO_CREAM.png" 
-                  alt="Vio La Doula - Professional Birth Doula and HypnoBirthing Instructor serving Greater North Houston area"
+                  alt="Vio La Doula - Professional Full-Spectrum Doula and HypnoBirthing Educator serving Greater North Houston area"
                   className="w-full h-full object-contain logo-transparent"
                   width="500"
                   height="500"

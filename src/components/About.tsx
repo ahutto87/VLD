@@ -64,10 +64,9 @@ const About: React.FC = () => {
                 {t('about.credentials')}
               </h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• Certified Birth Doula (Doulas of Discernment)</li>
-                <li>• HypnoBirthing® Instructor (HypnoBirthing® Institute)</li>
-                <li>• Postpartum Support Specialist</li>
-                <li>• Certified Mama Rising Facilitator</li>
+                <li>• Certified Full-Spectrum Doula</li>
+                <li>• <a href="https://hypnobirthing.com/directory/hypnobirthing/the-woodlands/viomar-guerere/" target="_blank" rel="noopener noreferrer" className="text-coral-300 hover:underline">Certified HypnoBirthing® Educator</a></li>
+                <li>• Certified Motherhood Coach</li>
                 <li>• CPR & First Aid Certified</li>
               </ul>
             </div>

@@ -85,14 +85,13 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
   about: {
     en: {
       title: 'About Vio La Doula | Professional Birth Doula | Houston, TX',
-      description: 'Meet Viomar Güerere (Vio), a certified birth doula and HypnoBirthing® instructor serving Greater North Houston. Bilingual support in English and Spanish.',
+      description: 'Meet Viomar Güerere (Vio), a certified full-spectrum doula and HypnoBirthing® educator serving Greater North Houston. Bilingual support in English and Spanish.',
       keywords: [
         'Viomar Guerere',
         'Vio La Doula',
-        'certified birth doula',
-        'HypnoBirthing instructor',
-        'Doulas of Discernment',
-        'Mama Rising Facilitator',
+        'certified full-spectrum doula',
+        'HypnoBirthing educator',
+        'motherhood coach',
         'bilingual doula Houston'
       ],
       ogType: 'profile',
