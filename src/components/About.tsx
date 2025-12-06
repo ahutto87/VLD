@@ -26,9 +26,10 @@ const About: React.FC = () => {
           <p className="text-xl text-coral-300 font-medium mb-6">
             {t('about.subtitle')}
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {t('about.intro')}
-          </p>
+          <p
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: t('about.intro') }}
+          />
           
           {/* Decorative divider */}
           <div className="flex justify-center mt-8">
