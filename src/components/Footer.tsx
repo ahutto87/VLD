@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { 
-  Heart, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Instagram, 
-  Facebook, 
+import { Link } from 'react-router-dom';
+import {
+  Heart,
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
   Youtube,
   Calendar,
   Baby,
@@ -199,13 +200,19 @@ const Footer: React.FC = () => {
                 {t('footer.copyright')}
               </p>
               <div className="flex items-center space-x-4 text-sm">
-                <button className="text-cream-50 hover:text-coral-300 transition-colors duration-300">
+                <Link
+                  to="/privacy-policy"
+                  className="text-cream-50 hover:text-coral-300 transition-colors duration-300"
+                >
                   {t('footer.privacy')}
-                </button>
+                </Link>
                 <span className="text-gray-600">|</span>
-                <button className="text-cream-50 hover:text-coral-300 transition-colors duration-300">
+                <Link
+                  to="/terms-of-service"
+                  className="text-cream-50 hover:text-coral-300 transition-colors duration-300"
+                >
                   {t('footer.terms')}
-                </button>
+                </Link>
               </div>
             </div>
 

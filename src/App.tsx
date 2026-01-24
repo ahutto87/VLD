@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import SEOHead from './components/SEOHead';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -8,15 +9,18 @@ import Coaching from './components/Coaching';
 import DueDateCalculator from './components/DueDateCalculator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { 
-  websiteSchema, 
-  localBusinessSchema, 
+import TermsOfService from './components/TermsOfService';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import {
+  websiteSchema,
+  localBusinessSchema,
   personSchema,
   professionalServiceSchema,
-  generateBreadcrumbSchema 
+  generateBreadcrumbSchema
 } from './utils/schemas';
 
-function App() {
+// Homepage component with all sections
+function HomePage() {
   // Generate structured data for the homepage
   const structuredData = [
     websiteSchema,
@@ -29,11 +33,11 @@ function App() {
   return (
     <div className="min-h-screen">
       {/* SEO Head with structured data for homepage */}
-      <SEOHead 
-        pageKey="home" 
+      <SEOHead
+        pageKey="home"
         structuredData={structuredData}
       />
-      
+
       <Header />
       <Hero />
       <About />
@@ -45,7 +49,17 @@ function App() {
       <Footer />
       {/* Additional sections: Blog will be added next */}
     </div>
-  )
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    </Routes>
+  );
 }
 
 export default App

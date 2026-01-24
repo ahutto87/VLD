@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
-  CheckCircle, 
+import { Link } from 'react-router-dom';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
   Calendar,
   Heart,
   Plus,
@@ -25,6 +26,7 @@ interface ContactFormData {
   dueDate?: string;
   service: string;
   message: string;
+  acceptTerms: boolean;
 }
 
 const Contact: React.FC = () => {
@@ -247,6 +249,31 @@ const Contact: React.FC = () => {
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                  )}
+                </div>
+
+                {/* Terms and Privacy Policy Agreement */}
+                <div>
+                  <label className="flex items-start space-x-3">
+                    <input
+                      {...register('acceptTerms', { required: 'You must agree to the Terms of Service and Privacy Policy' })}
+                      type="checkbox"
+                      className="mt-1 w-4 h-4 text-coral-300 border-gray-300 rounded focus:ring-coral-300"
+                    />
+                    <span className="text-sm text-gray-600">
+                      I agree to the{' '}
+                      <Link to="/terms-of-service" target="_blank" className="text-coral-300 hover:text-coral-400 underline">
+                        Terms of Service
+                      </Link>{' '}
+                      and{' '}
+                      <Link to="/privacy-policy" target="_blank" className="text-coral-300 hover:text-coral-400 underline">
+                        Privacy Policy
+                      </Link>{' '}
+                      of Vida Buena Vibra LLC (dba Vio La Doula). *
+                    </span>
+                  </label>
+                  {errors.acceptTerms && (
+                    <p className="mt-1 text-sm text-red-600">{errors.acceptTerms.message}</p>
                   )}
                 </div>
 

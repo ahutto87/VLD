@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Globe, CheckCircle } from 'lucide-react';
 import { sendHypnoBirthingEnrollment, sendAutoReply } from '../utils/emailService';
 
@@ -327,12 +328,20 @@ const HypnobirthingForm: React.FC = () => {
               <div>
                 <label className="flex items-start space-x-3">
                   <input
-                    {...register('acceptTerms', { required: 'You must accept the terms and conditions' })}
+                    {...register('acceptTerms', { required: 'You must agree to the Terms of Service and Privacy Policy' })}
                     type="checkbox"
                     className="mt-1 w-4 h-4 text-coral-300 border-gray-300 rounded focus:ring-coral-300"
                   />
                   <span className="text-sm text-gray-600">
-                    I accept the terms and conditions and understand the course policies including payment terms and cancellation policy. *
+                    I agree to the{' '}
+                    <Link to="/terms-of-service" target="_blank" className="text-coral-300 hover:text-coral-400 underline">
+                      Terms of Service
+                    </Link>{' '}
+                    and{' '}
+                    <Link to="/privacy-policy" target="_blank" className="text-coral-300 hover:text-coral-400 underline">
+                      Privacy Policy
+                    </Link>{' '}
+                    of Vida Buena Vibra LLC (dba Vio La Doula). *
                   </span>
                 </label>
                 {errors.acceptTerms && (

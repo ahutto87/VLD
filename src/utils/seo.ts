@@ -234,6 +234,62 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
       ogType: 'website',
       lang: 'es'
     }
+  },
+  terms: {
+    en: {
+      title: 'Terms of Service | Vida Buena Vibra LLC | Vio La Doula',
+      description: 'Terms of Service for Vida Buena Vibra LLC, doing business as Vio La Doula. Professional doula services in The Woodlands and Greater North Houston area.',
+      keywords: [
+        'terms of service',
+        'Vida Buena Vibra LLC',
+        'Vio La Doula terms',
+        'doula service agreement'
+      ],
+      ogType: 'website',
+      noindex: true,
+      lang: 'en'
+    },
+    es: {
+      title: 'Términos de Servicio | Vida Buena Vibra LLC | Vio La Doula',
+      description: 'Términos de Servicio de Vida Buena Vibra LLC, operando como Vio La Doula. Servicios profesionales de doula en The Woodlands y el área del Norte de Houston.',
+      keywords: [
+        'términos de servicio',
+        'Vida Buena Vibra LLC',
+        'términos Vio La Doula',
+        'acuerdo servicio doula'
+      ],
+      ogType: 'website',
+      noindex: true,
+      lang: 'es'
+    }
+  },
+  privacy: {
+    en: {
+      title: 'Privacy Policy | Vida Buena Vibra LLC | Vio La Doula',
+      description: 'Privacy Policy for Vida Buena Vibra LLC, doing business as Vio La Doula. Learn how we protect your personal information.',
+      keywords: [
+        'privacy policy',
+        'Vida Buena Vibra LLC',
+        'Vio La Doula privacy',
+        'data protection doula'
+      ],
+      ogType: 'website',
+      noindex: true,
+      lang: 'en'
+    },
+    es: {
+      title: 'Política de Privacidad | Vida Buena Vibra LLC | Vio La Doula',
+      description: 'Política de Privacidad de Vida Buena Vibra LLC, operando como Vio La Doula. Aprenda cómo protegemos su información personal.',
+      keywords: [
+        'política de privacidad',
+        'Vida Buena Vibra LLC',
+        'privacidad Vio La Doula',
+        'protección datos doula'
+      ],
+      ogType: 'website',
+      noindex: true,
+      lang: 'es'
+    }
   }
 };
 
