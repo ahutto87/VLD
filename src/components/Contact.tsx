@@ -397,11 +397,11 @@ const Contact: React.FC = () => {
                 <p className="text-gray-600 mb-4">
                   Schedule your free 30-minute consultation to discuss your birth vision and see if we're a good fit.
                 </p>
-                <button 
+                <button
                   onClick={handleScheduleConsultation}
-                  className="btn-primary hover:scale-105 transition-transform duration-300"
+                  className="btn-primary hover:scale-105 transition-transform duration-300 inline-flex items-center whitespace-nowrap"
                 >
-                  <Calendar className="w-4 h-4 mr-2" />
+                  <Calendar className="w-4 h-4 mr-2 flex-shrink-0" />
                   Schedule Free Consultation
                 </button>
               </div>

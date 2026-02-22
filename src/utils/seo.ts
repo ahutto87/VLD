@@ -150,7 +150,7 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
   hypnobirthing: {
     en: {
       title: 'HypnoBirthing® Classes | Certified Instructor | The Woodlands, TX',
-      description: 'HypnoBirthing® classes in The Woodlands and Houston area with certified instructor Vio. Group courses $350, individual sessions $595. Available in English and Spanish.',
+      description: 'HypnoBirthing® classes in The Woodlands and Houston area with certified instructor Vio. Group courses $350, individual sessions $650. Available in English and Spanish.',
       keywords: [
         'HypnoBirthing classes The Woodlands',
         'HypnoBirthing instructor The Woodlands',
@@ -164,7 +164,7 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
     },
     es: {
       title: 'Clases de HypnoBirthing® | Instructora Certificada | The Woodlands, TX',
-      description: 'Clases de HypnoBirthing® en The Woodlands y área de Houston con la instructora certificada Vio. Cursos grupales $350, sesiones individuales $595. Disponible en inglés y español.',
+      description: 'Clases de HypnoBirthing® en The Woodlands y área de Houston con la instructora certificada Vio. Cursos grupales $350, sesiones individuales $650. Disponible en inglés y español.',
       keywords: [
         'clases HypnoBirthing The Woodlands',
         'instructora HypnoBirthing The Woodlands',

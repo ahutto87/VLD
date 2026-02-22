@@ -202,7 +202,7 @@ export const hypnobirthingCourseSchema = {
       '@type': 'Offer',
       name: 'Individual HypnoBirthing® Sessions',
       description: 'One-on-one HypnoBirthing® training for couples',
-      price: '595',
+      price: '650',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock'
     }

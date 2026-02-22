@@ -98,7 +98,7 @@ src/
 
 ### HypnoBirthing® Courses
 - Group sessions: $350
-- Individual sessions: $595
+- Individual sessions: $650
 
 ### Professional Credentials
 1. Certified Full-Spectrum Doula
