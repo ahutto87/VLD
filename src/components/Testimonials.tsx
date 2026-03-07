@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     name: "Susana Diez",
     text_en: "Vio shared all her knowledge of hypnobirthing with us in a clear and loving way. She prepared my husband, my baby, and me for the birth to happen in the best possible way. With her patience, support, and the relaxation and breathing techniques she shared, I had a healthy, unmedicated birth, just as I had dreamed, and shorter than I ever imagined. I will always be grateful for her excellent support throughout the entire process! Vio has always been available to me, even after the birth.",
     text_es: "Vio compartió todo su conocimiento de hypnobirthing con nosotros de una manera clara y amorosa. Preparó a mi esposo, a mi bebé y a mí para que el parto se diera de la mejor manera posible. Con su paciencia, apoyo y las técnicas de relajación y respiración que nos enseñó, tuve un parto natural, sin medicamentos, tal como lo había soñado, ¡y más corto de lo que jamás imaginé! Siempre estaré agradecida por su excelente acompañamiento durante todo el proceso. ¡Vio siempre ha estado disponible para mí, incluso después del parto!",
-    service: "HypnoBirthing",
+    service: "HypnoBirthing & Birth Doula",
     stars: 5,
   },
 ];
