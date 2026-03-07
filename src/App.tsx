@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 import HypnobirthingForm from './components/HypnobirthingForm';
 import Coaching from './components/Coaching';
 import DueDateCalculator from './components/DueDateCalculator';
@@ -44,6 +45,7 @@ function HomePage() {
       <Services />
       <HypnobirthingForm />
       <Coaching />
+      <Testimonials />
       <DueDateCalculator />
       <Contact />
       <Footer />
