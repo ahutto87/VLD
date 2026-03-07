@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { Calendar, CheckCircle, ExternalLink } from 'lucide-react';
+import { Calendar, CheckCircle, ExternalLink, Clock, MapPin, Globe } from 'lucide-react';
 import { sendHypnoBirthingEnrollment, sendAutoReply } from '../utils/emailService';
 import { FloralDecor } from './DecorativeElements';
 
@@ -72,37 +72,84 @@ const HypnobirthingForm: React.FC = () => {
         }}
       ></div>
       <div className="relative z-10 max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-800 mb-3">
-            {t('hypnobirthing_form.title')}
-          </h2>
-          <p className="text-xl text-coral-300 font-medium mb-5">
-            {t('hypnobirthing_form.subtitle')}
-          </p>
-          <a
-            href="https://hypnobirthing.com/directory/hypnobirthing/the-woodlands/viomar-guerere/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-coral-100 text-coral-400 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-coral-200 transition-colors shadow-sm"
-          >
-            <ExternalLink className="w-4 h-4" />
-            {t('hypnobirthing_form.directory_badge')}
-          </a>
-          <div className="flex justify-center mt-6">
-            <FloralDecor color="#FCA669" className="w-12 h-12 opacity-30" />
-          </div>
-        </div>
+        <div className="card">
 
-        {isSubmitted ? (
-          <div className="card text-center py-14">
-            <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              {t('hypnobirthing_form.success_title')}
-            </h3>
-            <p className="text-gray-500 text-lg">{t('hypnobirthing_form.success_message')}</p>
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">
+              {t('hypnobirthing_form.title')}
+            </h2>
+            <p className="text-xl text-coral-300 font-medium mb-5">
+              {t('hypnobirthing_form.subtitle')}
+            </p>
+            <a
+              href="https://hypnobirthing.com/directory/hypnobirthing/the-woodlands/viomar-guerere/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-coral-100 text-coral-400 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-coral-200 transition-colors shadow-sm"
+            >
+              <ExternalLink className="w-4 h-4" />
+              {t('hypnobirthing_form.directory_badge')}
+            </a>
+            <div className="flex justify-center mt-6">
+              <FloralDecor color="#FCA669" className="w-12 h-12 opacity-30" />
+            </div>
           </div>
-        ) : (
-          <div className="card">
+
+          {/* HypnoBirthing Description */}
+          <div className="mb-8">
+            <p className="text-gray-600 leading-relaxed text-center mb-6">
+              {t('hypnobirthing.description')}
+            </p>
+
+            {/* Course Info */}
+            <div className="bg-coral-50 rounded-2xl p-5 mb-6 space-y-3">
+              <div className="flex items-center gap-3">
+                <Calendar className="w-5 h-5 text-coral-300 flex-shrink-0" />
+                <span className="text-gray-600">{t('hypnobirthing.course_info.duration')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-coral-300 flex-shrink-0" />
+                <span className="text-gray-600">{t('hypnobirthing.course_info.format')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Globe className="w-5 h-5 text-coral-300 flex-shrink-0" />
+                <span className="text-gray-600">{t('hypnobirthing.course_info.language')}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-coral-300 flex-shrink-0" />
+                <span className="text-gray-600 font-semibold">{t('hypnobirthing.course_info.price')}</span>
+              </div>
+            </div>
+
+            {/* What You'll Learn */}
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 mb-3">
+                {t('hypnobirthing.what_you_learn')}
+              </h3>
+              <ul className="space-y-2">
+                {(t('hypnobirthing.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-coral-300 mt-1 flex-shrink-0" />
+                    <span className="text-gray-600">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-coral-100 mb-8"></div>
+
+          {isSubmitted ? (
+            <div className="text-center py-8">
+              <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                {t('hypnobirthing_form.success_title')}
+              </h3>
+              <p className="text-gray-500 text-lg">{t('hypnobirthing_form.success_message')}</p>
+            </div>
+          ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
               {/* Full Name */}
@@ -206,8 +253,8 @@ const HypnobirthingForm: React.FC = () => {
               </button>
 
             </form>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );
