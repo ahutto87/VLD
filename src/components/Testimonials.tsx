@@ -34,10 +34,10 @@ const testimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    name: "Mariangel",
-    text_en: "Viomar was an incredible support throughout my pregnancy journey. She was knowledgeable, patient, and always took the time to answer my many questions with care. She gave me the confidence to believe in my inner capabilities and the power to achieve a natural and pleasant birth.",
-    text_es: "Viomar fue un apoyo increíble durante todo mi embarazo. Fue muy conocedora, paciente y siempre tomó el tiempo de responder mis preguntas con cuidado. Me dio la confianza para creer en mis capacidades y en el poder de lograr un parto natural y hermoso.",
-    service: "Birth Doula",
+    name: "Susana Diez",
+    text_en: "Vio shared all her knowledge of hypnobirthing with us in a clear and loving way. She prepared my husband, my baby, and me for the birth to happen in the best possible way. With her patience, support, and the relaxation and breathing techniques she shared, I had a healthy, unmedicated birth, just as I had dreamed, and shorter than I ever imagined. I will always be grateful for her excellent support throughout the entire process! Vio has always been available to me, even after the birth.",
+    text_es: "Vio compartió todo su conocimiento de hypnobirthing con nosotros de una manera clara y amorosa. Preparó a mi esposo, a mi bebé y a mí para que el parto se diera de la mejor manera posible. Con su paciencia, apoyo y las técnicas de relajación y respiración que nos enseñó, tuve un parto natural, sin medicamentos, tal como lo había soñado, ¡y más corto de lo que jamás imaginé! Siempre estaré agradecida por su excelente acompañamiento durante todo el proceso. ¡Vio siempre ha estado disponible para mí, incluso después del parto!",
+    service: "HypnoBirthing",
     stars: 5,
   },
 ];
