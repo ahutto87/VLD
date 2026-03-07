@@ -44,9 +44,9 @@ const HypnobirthingForm: React.FC = () => {
         specialAccommodations: '',
         howDidYouHear: '',
         additionalComments: data.message || '',
-        agreeToTerms: data.agreeToTerms,
+        acceptTerms: data.agreeToTerms,
       });
-      await sendAutoReply(data.email, data.fullName);
+      await sendAutoReply(data.email, data.fullName, 'hypnobirthing');
       setIsSubmitted(true);
       reset();
     } catch (error) {
