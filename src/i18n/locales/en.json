@@ -191,5 +191,11 @@
     "loading": "Loading...",
     "error": "Something went wrong. Please try again.",
     "success": "Success! Thank you for your message."
+  },
+  "testimonials": {
+    "title": "What Families Say",
+    "subtitle": "Real stories from the hearts of mothers",
+    "google_badge": "5.0 · 4 Reviews on Google",
+    "leave_review": "Share your experience on Google"
   }
 }
