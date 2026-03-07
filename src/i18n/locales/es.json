@@ -191,5 +191,11 @@
     "loading": "Cargando...",
     "error": "Algo salió mal. Por favor intenta de nuevo.",
     "success": "¡Éxito! Gracias por tu mensaje."
+  },
+  "testimonials": {
+    "title": "Lo que dicen las familias",
+    "subtitle": "Historias reales desde el corazón de las mamás",
+    "google_badge": "5.0 · 4 reseñas en Google",
+    "leave_review": "Comparte tu experiencia en Google"
   }
 }
