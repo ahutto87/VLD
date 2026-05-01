@@ -81,7 +81,7 @@ const HypnobirthingForm: React.FC = () => {
               <div className="mb-6 flex justify-center">
                 <img
                   src="/hypnobirthing-logo.png"
-                  alt="HypnoBirthing International â The Mongan Method"
+                  alt="HypnoBirthing International — The Mongan Method"
                   className="w-full max-w-xs"
                 />
               </div>
