@@ -148,13 +148,21 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
             onChange={(e) => setAcceptTerms(e.target.checked)}
             className="mt-1 w-4 h-4 text-coral-300 border-coral-200 rounded focus:ring-coral-300"
           />
-          <span className="text-xs text-terracotta/80">
+          <span className={isCompact ? 'text-xs text-cream-50/90' : 'text-xs text-terracotta/80'}>
             {t('newsletter.consent.prefix')}{' '}
-            <Link to="/terms-of-service" target="_blank" className="underline hover:text-coral-300">
+            <Link
+              to="/terms-of-service"
+              target="_blank"
+              className={isCompact ? 'underline hover:text-cream-50' : 'underline hover:text-coral-300'}
+            >
               {t('newsletter.consent.terms')}
             </Link>{' '}
             {t('newsletter.consent.and')}{' '}
-            <Link to="/privacy-policy" target="_blank" className="underline hover:text-coral-300">
+            <Link
+              to="/privacy-policy"
+              target="_blank"
+              className={isCompact ? 'underline hover:text-cream-50' : 'underline hover:text-coral-300'}
+            >
               {t('newsletter.consent.privacy')}
             </Link>
             .
