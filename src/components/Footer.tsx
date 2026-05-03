@@ -15,6 +15,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { trackButtonClick } from '../utils/navigation';
+import NewsletterSignup from './NewsletterSignup';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -49,6 +50,21 @@ const Footer: React.FC = () => {
 
   return (
     <footer style={{ backgroundColor: '#D17D44', color: '#FAF3E3' }}>
+      {/* Newsletter Signup Strip */}
+      <div className="border-b" style={{ borderColor: 'rgba(250, 243, 227, 0.2)' }}>
+        <div className="max-w-3xl mx-auto px-4 py-12 text-center">
+          <h3 className="text-2xl font-bold mb-3" style={{ color: '#FAF3E3' }}>
+            {t('newsletter.footer.title')}
+          </h3>
+          <p className="mb-6 text-sm" style={{ color: '#FAF3E3', opacity: 0.85 }}>
+            {t('newsletter.footer.description')}
+          </p>
+          <div className="max-w-md mx-auto">
+            <NewsletterSignup variant="compact" />
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

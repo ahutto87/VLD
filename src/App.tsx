@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import SubscribePage from './components/SubscribePage';
 import {
   websiteSchema,
   localBusinessSchema,
@@ -60,6 +61,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/subscribe" element={<SubscribePage />} />
     </Routes>
   );
 }

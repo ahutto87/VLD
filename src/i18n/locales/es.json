@@ -221,5 +221,51 @@
     "subtitle": "Historias reales desde el corazón de las mamás",
     "google_badge": "5.0 · 4 reseñas en Google",
     "leave_review": "Comparte tu experiencia en Google"
+  },
+  "newsletter": {
+    "title": "Mantente en Contacto",
+    "description": "Sabiduría sobre el parto, consejos de HypnoBirthing® y ofertas especiales — directo a tu correo.",
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "tu@correo.com"
+    },
+    "consent": {
+      "prefix": "Acepto los",
+      "terms": "Términos de Servicio",
+      "and": "y la",
+      "privacy": "Política de Privacidad"
+    },
+    "submit": "Suscribirme",
+    "submitting": "Suscribiendo...",
+    "success": {
+      "title": "¡Casi listo!",
+      "message": "Revisa tu correo para confirmar tu suscripción. ♥"
+    },
+    "errors": {
+      "consent": "Por favor acepta los Términos de Servicio y la Política de Privacidad.",
+      "generic": "Algo salió mal. Por favor intenta de nuevo."
+    },
+    "footer": {
+      "title": "Únete al Boletín de Vio La Doula",
+      "description": "Recursos sobre embarazo y parto de tu doula Latina bilingüe. Sin spam — solo apoyo desde el corazón."
+    },
+    "page": {
+      "title": "Únete al Boletín de Vio La Doula",
+      "subtitle": "Sabiduría sobre el parto, consejos de HypnoBirthing® y ofertas especiales — escritos con amor para las familias que acompaño.",
+      "benefits": [
+        {
+          "title": "Apoyo desde el Corazón",
+          "description": "Recordatorios suaves, afirmaciones y aliento durante todo tu viaje."
+        },
+        {
+          "title": "Ofertas Especiales",
+          "description": "Acceso anticipado a inscripciones de cursos y promociones de temporada."
+        },
+        {
+          "title": "Sin Spam, Nunca",
+          "description": "Unos pocos correos al mes. Cancela tu suscripción cuando quieras."
+        }
+      ]
+    }
   }
 }

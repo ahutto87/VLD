@@ -263,6 +263,34 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
       lang: 'es'
     }
   },
+  subscribe: {
+    en: {
+      title: 'Join the Newsletter | Vio La Doula',
+      description: 'Subscribe to the Vio La Doula newsletter for birth wisdom, HypnoBirthing® tips, and special offers from your bilingual Latina doula serving The Woodlands and Greater North Houston.',
+      keywords: [
+        'doula newsletter',
+        'birth tips',
+        'HypnoBirthing newsletter',
+        'pregnancy newsletter',
+        'Vio La Doula updates'
+      ],
+      ogType: 'website',
+      lang: 'en'
+    },
+    es: {
+      title: 'Únete al Boletín | Vio La Doula',
+      description: 'Suscríbete al boletín de Vio La Doula para recibir sabiduría sobre el parto, consejos de HypnoBirthing® y ofertas especiales de tu doula Latina bilingüe en The Woodlands y el Norte de Houston.',
+      keywords: [
+        'boletín doula',
+        'consejos parto',
+        'boletín HypnoBirthing',
+        'boletín embarazo',
+        'actualizaciones Vio La Doula'
+      ],
+      ogType: 'website',
+      lang: 'es'
+    }
+  },
   privacy: {
     en: {
       title: 'Privacy Policy | Vida Buena Vibra LLC | Vio La Doula',

@@ -221,5 +221,51 @@
     "subtitle": "Real stories from the hearts of mothers",
     "google_badge": "5.0 · 4 Reviews on Google",
     "leave_review": "Share your experience on Google"
+  },
+  "newsletter": {
+    "title": "Stay Connected",
+    "description": "Birth wisdom, HypnoBirthing® tips, and special offers — straight to your inbox.",
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com"
+    },
+    "consent": {
+      "prefix": "I agree to the",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    },
+    "submit": "Subscribe",
+    "submitting": "Subscribing...",
+    "success": {
+      "title": "Almost there!",
+      "message": "Check your inbox to confirm your subscription. ♥"
+    },
+    "errors": {
+      "consent": "Please agree to the Terms of Service and Privacy Policy.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "footer": {
+      "title": "Join the Vio La Doula Newsletter",
+      "description": "Pregnancy and birth resources from your bilingual Latina doula. No spam — just heart-led support."
+    },
+    "page": {
+      "title": "Join the Vio La Doula Newsletter",
+      "subtitle": "Birth wisdom, HypnoBirthing® tips, and special offers — written with love for the families I serve.",
+      "benefits": [
+        {
+          "title": "Heart-led Support",
+          "description": "Gentle reminders, affirmations, and encouragement throughout your journey."
+        },
+        {
+          "title": "Special Offers",
+          "description": "Early access to course openings and seasonal promotions."
+        },
+        {
+          "title": "No Spam, Ever",
+          "description": "A few thoughtful emails a month. Unsubscribe anytime."
+        }
+      ]
+    }
   }
 }

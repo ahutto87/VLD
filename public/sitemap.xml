@@ -79,4 +79,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/#contact"/>
   </url>
 
+  <!-- Newsletter Subscribe Page -->
+  <url>
+    <loc>https://www.violadoula.com/subscribe</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.violadoula.com/subscribe?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.violadoula.com/subscribe?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.violadoula.com/subscribe"/>
+  </url>
+
 </urlset>
