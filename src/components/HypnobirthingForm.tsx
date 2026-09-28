@@ -33,7 +33,7 @@ const HypnobirthingForm: React.FC = () => {
     setIsLoading(true);
     setSubmitError(false);
     try {
-      await sendHypnoBirthingEnrollment({
+      const success = await sendHypnoBirthingEnrollment({
         fullName: data.fullName,
         email: data.email,
         phone: '',
@@ -47,9 +47,13 @@ const HypnobirthingForm: React.FC = () => {
         additionalComments: data.message || '',
         acceptTerms: data.agreeToTerms,
       });
-      await sendAutoReply(data.email, data.fullName, 'hypnobirthing');
-      setIsSubmitted(true);
-      reset();
+      if (success) {
+        await sendAutoReply(data.email, data.fullName, 'hypnobirthing');
+        setIsSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(true);
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitError(true);
