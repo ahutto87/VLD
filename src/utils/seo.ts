@@ -362,7 +362,8 @@ export const pagePaths = {
   home: '/',
   subscribe: '/subscribe',
   terms: '/terms-of-service',
-  privacy: '/privacy-policy'
+  privacy: '/privacy-policy',
+  'hypnobirthing-class': '/hypnobirthing-class'
 } as const;
 
 export type PageKey = keyof typeof pagePaths;
