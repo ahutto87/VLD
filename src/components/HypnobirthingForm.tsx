@@ -62,7 +62,7 @@ const HypnobirthingForm: React.FC = () => {
     `w-full px-4 py-3 rounded-2xl border ${hasError ? 'border-red-400 bg-red-50' : 'border-coral-200 bg-white'} focus:outline-none focus:ring-2 focus:ring-coral-300 transition-colors`;
 
   return (
-    <section id="hypnobirthing-form" className="relative section-padding overflow-hidden">
+    <section id="hypnobirthing" className="relative section-padding overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
