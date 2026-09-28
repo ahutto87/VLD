@@ -45,7 +45,7 @@ function App() {
       <Route path={pagePaths.terms} element={<TermsOfService />} />
       <Route path={pagePaths.privacy} element={<PrivacyPolicy />} />
       <Route path={pagePaths.subscribe} element={<SubscribePage />} />
-      <Route path="/hypnobirthing-class" element={<HypnobirthingClassPage />} />
+      <Route path={pagePaths['hypnobirthing-class']} element={<HypnobirthingClassPage />} />
     </Routes>
   );
 }
