@@ -46,7 +46,7 @@ The auto-reply system automatically populates these variables:
 | `{{next_steps}}` | Auto-generated | Custom message based on form type |
 | `{{from_name}}` | Static | "Vio La Doula" |
 | `{{business_email}}` | Static | "hello@violadoula.com" |
-| `{{business_phone}}` | Static | "(713) 234-5678" |
+| `{{business_phone}}` | Static | "(346) 380-8476" |
 | `{{website_url}}` | Static | "https://www.violadoula.com" |
 
 ## Dynamic Content Generation

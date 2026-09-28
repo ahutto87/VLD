@@ -125,7 +125,7 @@ export const sendAutoReply = async (clientEmail: string, clientName: string, for
       next_steps: nextSteps,
       from_name: 'Vio La Doula',
       business_email: 'hello@violadoula.com',
-      business_phone: '(713) 234-5678',
+      business_phone: '(346) 380-8476',
       website_url: 'https://www.violadoula.com'
     };
 
