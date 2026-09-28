@@ -15,7 +15,7 @@ Professional bilingual (English/Spanish) doula website for Viomar Güerere — [
 - **Internationalization:** react-i18next for English/Spanish toggle
 - **Forms:** react-hook-form with validation
 - **Email:** @emailjs/browser (production — Service ID: `service_kd7nnoj`, Public Key: `9l2ro5MAeErk2Bug4`)
-- **SEO:** react-helmet-async, JSON-LD structured data in index.html
+- **SEO:** `SEOHead` updates index.html's head tags in place per page/language (react-helmet-async was removed: 2.x doesn't support React 19), per-route HTML written at build time, JSON-LD structured data in index.html
 - **Icons:** Lucide React
 - **Animations:** Framer Motion (installed, not yet implemented)
 
@@ -123,8 +123,10 @@ src/
 
 ### Technical SEO (all live)
 - `index.html` contains pre-rendered meta tags, Open Graph, Twitter Cards, and JSON-LD (LocalBusiness + Person schemas) — critical for Google crawling since React is client-side rendered
-- `src/utils/seo.ts` — Per-section SEO configs
-- `src/utils/schemas.ts` — Structured data schemas (LocalBusiness, ProfessionalService, Person, Course)
+- `src/utils/seo.ts` — Per-section SEO configs, plus `pagePaths` (every client route; App.tsx builds its routes from it)
+- `scripts/route-html.ts` — Vite plugin that writes `dist/<route>.html` for each entry in `pagePaths` with that page's title/description/canonical/OG tags, plus `dist/404.html` (SPA fallback). GitHub Pages serves `/subscribe` from `subscribe.html` with a 200; a route missing from `pagePaths` only loads via 404.html (HTTP 404)
+- Spanish URLs use `?lang=es` (i18n querystring detector); canonical and hreflang tags follow that scheme
+- `src/utils/schemas.ts` — Structured data schemas (LocalBusiness, ProfessionalService, Person, Course) — not rendered anywhere; the JSON-LD in index.html is what's live
 - `public/robots.txt` and `public/sitemap.xml` — Crawler directives
 - Google Search Console connected, sitemap submitted
 - Rich Results validated: 2 valid items (LocalBusiness + Organization)
