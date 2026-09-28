@@ -11,8 +11,8 @@ This comprehensive guide will help you set up and optimize your Google My Busine
 **Business Type:** `Service provider` (serves customers at their location)
 
 ### Contact Information
-**Phone:** `(713) 234-5678` *(update with actual number)*
-**Email:** `hello@violadoula.com` *(update with actual email)*
+**Phone:** `(346) 380-8476`
+**Email:** `violadoula@gmail.com`
 **Website:** `https://www.violadoula.com`
 
 ### Service Area Configuration
@@ -140,10 +140,10 @@ Create regular GMB posts (2-3 per week):
 
 ### Messaging Auto-Responses
 **Welcome Message:**
-"Hi! Thanks for your interest in Vio La Doula services. I typically respond within 2-4 hours. For immediate questions about active labor support, please call (713) 234-5678. How can I help you today?"
+"Hi! Thanks for your interest in Vio La Doula services. I typically respond within 2-4 hours. For immediate questions about active labor support, please call (346) 380-8476. How can I help you today?"
 
 **Away Message (After Hours):**
-"Thanks for messaging! I'll respond within 24 hours. If you're in active labor and need immediate support, please call my 24/7 birth support line at (713) 234-5678."
+"Thanks for messaging! I'll respond within 24 hours. If you're in active labor and need immediate support, please call my 24/7 birth support line at (346) 380-8476."
 
 ## 🏆 Review Generation Strategy
 
@@ -162,7 +162,7 @@ Create regular GMB posts (2-3 per week):
 "Thank you for taking the time to share your experience! I'm so glad I could support your family during this important time. Your feedback helps me continue improving my services."
 
 **Negative Review Response:**
-"Thank you for your feedback. I take all client experiences seriously and would love to discuss this further to understand how I can improve. Please feel free to contact me directly at hello@violadoula.com."
+"Thank you for your feedback. I take all client experiences seriously and would love to discuss this further to understand how I can improve. Please feel free to contact me directly at violadoula@gmail.com."
 
 ## 🎯 Local SEO Integration
 
@@ -170,7 +170,7 @@ Create regular GMB posts (2-3 per week):
 Ensure these match exactly across all platforms:
 **Name:** Vio La Doula
 **Address:** The Woodlands, TX (service area business)
-**Phone:** (713) 234-5678
+**Phone:** (346) 380-8476
 
 ### Citation Building
 Submit consistent business information to:
