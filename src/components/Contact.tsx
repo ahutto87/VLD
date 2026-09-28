@@ -32,6 +32,7 @@ interface ContactFormData {
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [preSelectedService, setPreSelectedService] = useState<string>('');
   
@@ -44,6 +45,7 @@ const Contact: React.FC = () => {
   } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
+    setSubmitError(false);
     try {
       const success = await sendContactForm(data);
       if (success) {
@@ -57,10 +59,11 @@ const Contact: React.FC = () => {
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
         console.error('Failed to send email');
-        // Could add error state here
+        setSubmitError(true);
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmitError(true);
     }
   };
 
@@ -276,6 +279,10 @@ const Contact: React.FC = () => {
                     <p className="mt-1 text-sm text-red-600">{errors.acceptTerms.message}</p>
                   )}
                 </div>
+
+                {submitError && (
+                  <p className="text-red-500 text-sm text-center">{t('common.error')}</p>
+                )}
 
                 <button
                   type="submit"
