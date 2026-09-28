@@ -45,7 +45,7 @@ The auto-reply system automatically populates these variables:
 | `{{service_type}}` | Auto-generated | "consultation request" / "HypnoBirthing® enrollment" |
 | `{{next_steps}}` | Auto-generated | Custom message based on form type |
 | `{{from_name}}` | Static | "Vio La Doula" |
-| `{{business_email}}` | Static | "hello@violadoula.com" |
+| `{{business_email}}` | Static | "violadoula@gmail.com" |
 | `{{business_phone}}` | Static | "(346) 380-8476" |
 | `{{website_url}}` | Static | "https://www.violadoula.com" |
 
