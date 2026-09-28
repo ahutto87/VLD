@@ -291,6 +291,38 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
       lang: 'es'
     }
   },
+  'hypnobirthing-class': {
+    en: {
+      title: 'Online HypnoBirthing® Group Class | Register | Vio La Doula',
+      description: 'Register for an online HypnoBirthing® group class with certified educator Vio. Wednesdays, November 4 – December 9, 2026, 6:30–9:00 PM Central via Zoom. $350 per couple; a $100 deposit reserves your spot.',
+      keywords: [
+        'online HypnoBirthing class',
+        'HypnoBirthing group class',
+        'HypnoBirthing class Zoom',
+        'HypnoBirthing classes The Woodlands',
+        'HypnoBirthing Houston',
+        'childbirth class online',
+        'bilingual HypnoBirthing educator'
+      ],
+      ogType: 'website',
+      lang: 'en'
+    },
+    es: {
+      title: 'Clase Grupal de HypnoBirthing® en Línea | Inscripción | Vio La Doula',
+      description: 'Inscríbete en la clase grupal de HypnoBirthing® en línea con la educadora certificada Vio. Miércoles, del 4 de noviembre al 9 de diciembre de 2026, de 6:30 a 9:00 p. m. (hora del centro) por Zoom. $350 por pareja; un depósito de $100 reserva tu lugar.',
+      keywords: [
+        'clase de HypnoBirthing en línea',
+        'clase grupal de HypnoBirthing',
+        'HypnoBirthing por Zoom',
+        'clases HypnoBirthing The Woodlands',
+        'HypnoBirthing Houston',
+        'clase de parto en línea',
+        'educadora HypnoBirthing bilingüe'
+      ],
+      ogType: 'website',
+      lang: 'es'
+    }
+  },
   privacy: {
     en: {
       title: 'Privacy Policy | Vida Buena Vibra LLC | Vio La Doula',

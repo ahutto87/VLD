@@ -267,5 +267,90 @@
         }
       ]
     }
+  },
+  "hb_class": {
+    "banner": {
+      "badge": "Now enrolling · Online",
+      "title": "HypnoBirthing® Group Class",
+      "summary": "{{fee}} per couple · A {{deposit}} deposit reserves your spot",
+      "cta": "Reserve your spot"
+    },
+    "page": {
+      "language_toggle": "Español",
+      "eyebrow": "Online group class",
+      "title": "HypnoBirthing® Group Class",
+      "subtitle": "Prepare for a calm, confident birth alongside your birth partner, from the comfort of home.",
+      "details_title": "Class details",
+      "online": "Online via Zoom",
+      "fee": "{{fee}} per couple (you + your birth partner)",
+      "deposit": "A {{deposit}} deposit by Zelle or Venmo reserves your spot",
+      "steps_title": "How to reserve your spot",
+      "step_1": "Fill out the registration form. It takes about a minute.",
+      "step_2": "Send your {{deposit}} deposit by Zelle or Venmo. You'll see the instructions right away, and I'll email you a copy.",
+      "step_3": "Once your deposit arrives, I'll confirm your spot by email and send you the Zoom link."
+    },
+    "form": {
+      "title": "Register for the class",
+      "full_name": "Full name",
+      "full_name_placeholder": "Your full name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "phone": "Phone",
+      "phone_placeholder": "(555) 123-4567",
+      "due_date": "Due date",
+      "partner_name": "Birth partner's name",
+      "partner_hint": "The class fee covers you and one birth partner.",
+      "first_baby": "Is this your first baby?",
+      "first_baby_yes": "Yes, my first baby",
+      "first_baby_no": "No, I've given birth before",
+      "birth_place": "Where are you planning to give birth?",
+      "birth_place_hospital": "Hospital",
+      "birth_place_birth_center": "Birth center",
+      "birth_place_home": "Home",
+      "birth_place_unsure": "Not sure yet",
+      "select": "Select...",
+      "optional": "(optional)",
+      "message": "Questions, or anything you'd like me to know?",
+      "message_placeholder": "Share anything that will help me support you",
+      "agree_prefix": "I agree to the",
+      "terms_link": "Terms of Service",
+      "and": "and",
+      "privacy_link": "Privacy Policy",
+      "no_payment": "No payment is taken on this site. You'll send your deposit directly to me by Zelle or Venmo.",
+      "submit": "Register & get deposit instructions",
+      "submitting": "Registering...",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter a valid phone number.",
+        "due_date": "Please enter a due date in the future.",
+        "consent": "Please agree to the Terms of Service and Privacy Policy.",
+        "submit": "Your registration couldn't be sent. Please try again, or email violadoula@gmail.com."
+      }
+    },
+    "success": {
+      "title": "You're almost in, {{name}}!",
+      "intro": "To reserve your spot, send your {{deposit}} deposit with either option:",
+      "zelle_hint": "Shows as {{name}}",
+      "open_venmo": "Open Venmo",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "note": "Please include your name in the payment note: {{name}}",
+      "next": "Once I receive your deposit, I'll email you to confirm your spot and send the Zoom link. Your deposit goes toward the {{fee}} class fee; the remaining {{balance}} is due by the first class on {{firstClass}}.",
+      "email_sent": "I've also emailed these instructions to {{email}}. If you don't see them, check your spam folder.",
+      "email_failed": "Please save these instructions. I couldn't email you a copy, but your registration was received."
+    },
+    "closed": {
+      "title": "Registration for this class has closed",
+      "message": "Join my newsletter to be the first to hear when the next HypnoBirthing® group class opens.",
+      "contact": "Have a question? Get in touch"
+    },
+    "email": {
+      "welcome_subject": "You're almost in! Reserve your spot in the HypnoBirthing® class"
+    },
+    "confirmation": {
+      "subject": "Your spot is reserved! HypnoBirthing® group class",
+      "body": "Hi {{name}},\n\nI received your {{deposit}} deposit. Thank you! Your spot in the HypnoBirthing® group class is officially reserved.\n\nClass details:\n• {{dates}}\n• {{time}}\n• Zoom link: [ADD ZOOM LINK]\n\nThe remaining {{balance}} is due by the first class on {{firstClass}}, by Zelle ({{zelleEmail}}) or Venmo (@{{venmoHandle}}).\n\nI can't wait to begin this journey with you!\n\nWith love,\nVio"
+    }
   }
 }

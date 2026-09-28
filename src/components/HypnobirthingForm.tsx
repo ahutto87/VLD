@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, CheckCircle, ExternalLink, Clock, MapPin, Globe } from 'lucide-react';
 import { sendHypnoBirthingEnrollment, sendAutoReply } from '../utils/emailService';
 import { FloralDecor } from './DecorativeElements';
+import HypnobirthingClassBanner from './HypnobirthingClassBanner';
 
 interface FormData {
   fullName: string;
@@ -72,6 +73,7 @@ const HypnobirthingForm: React.FC = () => {
         }}
       ></div>
       <div className="relative z-10 max-w-6xl mx-auto">
+        <HypnobirthingClassBanner />
         <div className="card">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 

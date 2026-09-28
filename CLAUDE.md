@@ -65,6 +65,8 @@ src/
 │   ├── About.tsx               Bio, portrait, credentials, personal birth story
 │   ├── Services.tsx            2-tier doula packages (Essentials/Premium)
 │   ├── HypnobirthingForm.tsx   Course enrollment with validation + EmailJS
+│   ├── HypnobirthingClassPage.tsx   /hypnobirthing-class — group class registration + deposit instructions
+│   ├── HypnobirthingClassBanner.tsx Homepage callout for the group class (hides when registration closes)
 │   ├── Coaching.tsx            Session types and booking info
 │   ├── DueDateCalculator.tsx   Interactive pregnancy tracking tool
 │   ├── Contact.tsx             Contact form, bilingual FAQ, contact info
@@ -75,6 +77,7 @@ src/
 │   └── DecorativeElements.tsx  Botanical SVG components
 ├── utils/
 │   ├── emailService.ts         EmailJS integration + auto-reply system
+│   ├── hypnobirthingClass.ts   Current group class cohort: dates, fee/deposit, Zelle/Venmo
 │   ├── navigation.ts           Smooth scrolling, service pre-population
 │   ├── seo.ts                  SEO configs for all pages
 │   └── schemas.ts              JSON-LD structured data schemas
@@ -136,8 +139,9 @@ src/
 ### EmailJS (production active)
 - **Service ID:** `service_kd7nnoj`
 - **Public Key:** `9l2ro5MAeErk2Bug4`
-- **Templates:** `contact_template`, `hypnobirthing_template`
+- **Templates:** `contact_template`, `hypnobirthing_template`, `class_signup_template`, `class_welcome_template` (EmailJS caps Template IDs at 24 characters)
 - **Auto-reply:** `sendAutoReply()` function sends branded confirmation emails
+- **Group class registration:** `sendClassRegistration()` emails Vio first, then sends the registrant a bilingual welcome with $100 Zelle/Venmo deposit instructions. Template HTML and dashboard settings live in `email-templates/` (see its README); payment details are hardcoded in the welcome template on purpose
 - Both Contact and HypnoBirthing forms include Terms/Privacy agreement checkboxes
 
 ## Deployment
@@ -193,3 +197,4 @@ src/
 | Oct 2025 | Simplified to 2 packages (Essentials $2,200 / Premium $2,400), certification updates, critical SEO fix (structured data in index.html) |
 | Dec 2025 | Hero/about content updates — personal birth story, expanded taglines |
 | Jan 2026 | LLC branding (Vida Buena Vibra LLC), legal pages (Terms of Service, Privacy Policy), React Router, form consent checkboxes, Premium price to $2,500 |
+| Sep 2026 | Online HypnoBirthing® group class registration (`/hypnobirthing-class`, Nov 4 – Dec 9, 2026): bilingual form, $100 Zelle/Venmo deposit flow, EmailJS welcome + Vio notification emails, homepage banner |

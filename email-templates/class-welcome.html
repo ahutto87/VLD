@@ -1,0 +1,112 @@
+<div style="margin:0;padding:24px 12px;background-color:#FAF3E3;">
+{{#is_spanish}}
+<div style="display:none;max-height:0;overflow:hidden;">Env&iacute;a tu dep&oacute;sito de {{deposit}} por Zelle o Venmo para reservar tu lugar.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;background-color:#FFFFFF;border-radius:16px;font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#7A4526;">
+  <tr>
+    <td style="padding:32px 32px 8px;text-align:center;">
+      <img src="https://www.violadoula.com/VD_ARCH-LOGO_CREAM.png" width="88" alt="Vio La Doula" style="display:inline-block;width:88px;height:auto;border:0;">
+      <h1 style="margin:20px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:normal;line-height:1.3;color:#D17D44;">&iexcl;Ya casi est&aacute;s, {{to_name}}! &#9825;</h1>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:16px 32px 0;">
+      <p style="margin:0 0 20px;">Gracias por inscribirte en mi clase grupal de HypnoBirthing&reg; en l&iacute;nea. Me hace muy feliz que te prepares para tu parto conmigo.</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF3E3;border-radius:12px;">
+        <tr>
+          <td style="padding:20px 24px;">
+            <p style="margin:0 0 12px;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#D17D44;">Detalles de la clase</p>
+            <p style="margin:0 0 6px;"><strong>Cu&aacute;ndo:</strong> {{class_dates}}</p>
+            <p style="margin:0 0 6px;"><strong>Horario:</strong> {{class_time}}</p>
+            <p style="margin:0 0 6px;"><strong>D&oacute;nde:</strong> En l&iacute;nea por Zoom (te enviar&eacute; el enlace con tu confirmaci&oacute;n)</p>
+            <p style="margin:0;"><strong>Costo:</strong> {{fee}} por pareja</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:20px 32px 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FBEBD2;border:2px solid #FCA669;border-radius:12px;">
+        <tr>
+          <td style="padding:20px 24px;">
+            <p style="margin:0 0 12px;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#D17D44;">Reserva tu lugar</p>
+            <p style="margin:0 0 14px;">Para reservar tu lugar, env&iacute;a un dep&oacute;sito de <strong>{{deposit}}</strong> por cualquiera de estas opciones:</p>
+            <p style="margin:0 0 10px;"><strong>Zelle:</strong> viomar.g@gmail.com<br><span style="font-size:14px;">Aparece como Viomar G&uuml;erere</span></p>
+            <p style="margin:0 0 14px;"><strong>Venmo:</strong> <a href="https://venmo.com/u/Viomar-Guerere" style="color:#D17D44;font-weight:bold;">@Viomar-Guerere</a></p>
+            <p style="margin:0;">Por favor incluye tu nombre en la nota del pago: <strong>{{student_name}}</strong></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:24px 32px 0;">
+      <h2 style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:normal;color:#D17D44;">&iquest;Qu&eacute; sigue?</h2>
+      <p style="margin:0 0 16px;">En cuanto reciba tu dep&oacute;sito, te enviar&eacute; un correo confirmando tu lugar junto con el enlace de Zoom. Tu dep&oacute;sito se aplica al costo de {{fee}} de la clase; el saldo restante de {{balance}} se paga antes de la primera clase, el {{first_class}}.</p>
+      <p style="margin:0 0 24px;">&iquest;Preguntas? Solo responde a este correo, o ll&aacute;mame o escr&iacute;beme al <a href="tel:+13463808476" style="color:#D17D44;">(346) 380-8476</a>.</p>
+      <p style="margin:0;">Con cari&ntilde;o,<br><span style="font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#D17D44;">Vio</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:24px 32px 32px;">
+      <p style="margin:0;padding-top:16px;border-top:1px solid #F7D4B6;font-size:13px;color:#9C6B4E;text-align:center;">Vio La Doula &middot; Tu Doula Latina<br><a href="https://www.violadoula.com" style="color:#D17D44;">www.violadoula.com</a> &middot; Instagram <a href="https://instagram.com/vio_ladoula" style="color:#D17D44;">@vio_ladoula</a></p>
+    </td>
+  </tr>
+</table>
+{{/is_spanish}}
+{{^is_spanish}}
+<div style="display:none;max-height:0;overflow:hidden;">Send your {{deposit}} deposit by Zelle or Venmo to reserve your spot.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;margin:0 auto;background-color:#FFFFFF;border-radius:16px;font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#7A4526;">
+  <tr>
+    <td style="padding:32px 32px 8px;text-align:center;">
+      <img src="https://www.violadoula.com/VD_ARCH-LOGO_CREAM.png" width="88" alt="Vio La Doula" style="display:inline-block;width:88px;height:auto;border:0;">
+      <h1 style="margin:20px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:normal;line-height:1.3;color:#D17D44;">You're almost in, {{to_name}}! &#9825;</h1>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:16px 32px 0;">
+      <p style="margin:0 0 20px;">Thank you for registering for my online HypnoBirthing&reg; group class. I'm so happy you'll be preparing for your birth with me.</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF3E3;border-radius:12px;">
+        <tr>
+          <td style="padding:20px 24px;">
+            <p style="margin:0 0 12px;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#D17D44;">Class details</p>
+            <p style="margin:0 0 6px;"><strong>When:</strong> {{class_dates}}</p>
+            <p style="margin:0 0 6px;"><strong>Time:</strong> {{class_time}}</p>
+            <p style="margin:0 0 6px;"><strong>Where:</strong> Online via Zoom (I'll send the link with your confirmation)</p>
+            <p style="margin:0;"><strong>Fee:</strong> {{fee}} per couple</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:20px 32px 0;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FBEBD2;border:2px solid #FCA669;border-radius:12px;">
+        <tr>
+          <td style="padding:20px 24px;">
+            <p style="margin:0 0 12px;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#D17D44;">Reserve your spot</p>
+            <p style="margin:0 0 14px;">To reserve your spot, please send a <strong>{{deposit}}</strong> deposit with either option:</p>
+            <p style="margin:0 0 10px;"><strong>Zelle:</strong> viomar.g@gmail.com<br><span style="font-size:14px;">Shows as Viomar G&uuml;erere</span></p>
+            <p style="margin:0 0 14px;"><strong>Venmo:</strong> <a href="https://venmo.com/u/Viomar-Guerere" style="color:#D17D44;font-weight:bold;">@Viomar-Guerere</a></p>
+            <p style="margin:0;">Please include your name in the payment note: <strong>{{student_name}}</strong></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:24px 32px 0;">
+      <h2 style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:normal;color:#D17D44;">What happens next</h2>
+      <p style="margin:0 0 16px;">Once I receive your deposit, I'll email you to confirm your spot and send the Zoom link. Your deposit goes toward the {{fee}} class fee; the remaining {{balance}} is due by the first class on {{first_class}}.</p>
+      <p style="margin:0 0 24px;">Questions? Just reply to this email, or call or text me at <a href="tel:+13463808476" style="color:#D17D44;">(346) 380-8476</a>.</p>
+      <p style="margin:0;">With love,<br><span style="font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#D17D44;">Vio</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:24px 32px 32px;">
+      <p style="margin:0;padding-top:16px;border-top:1px solid #F7D4B6;font-size:13px;color:#9C6B4E;text-align:center;">Vio La Doula &middot; Your Doula Latina<br><a href="https://www.violadoula.com" style="color:#D17D44;">www.violadoula.com</a> &middot; Instagram <a href="https://instagram.com/vio_ladoula" style="color:#D17D44;">@vio_ladoula</a></p>
+    </td>
+  </tr>
+</table>
+{{/is_spanish}}
+</div>

@@ -267,5 +267,90 @@
         }
       ]
     }
+  },
+  "hb_class": {
+    "banner": {
+      "badge": "Inscripciones abiertas · En línea",
+      "title": "Clase Grupal de HypnoBirthing®",
+      "summary": "{{fee}} por pareja · Un depósito de {{deposit}} reserva tu lugar",
+      "cta": "Reserva tu lugar"
+    },
+    "page": {
+      "language_toggle": "English",
+      "eyebrow": "Clase grupal en línea",
+      "title": "Clase Grupal de HypnoBirthing®",
+      "subtitle": "Prepárate para un parto tranquilo y confiado junto a tu acompañante, desde la comodidad de tu hogar.",
+      "details_title": "Detalles de la clase",
+      "online": "En línea por Zoom",
+      "fee": "{{fee}} por pareja (tú + tu acompañante de parto)",
+      "deposit": "Un depósito de {{deposit}} por Zelle o Venmo reserva tu lugar",
+      "steps_title": "Cómo reservar tu lugar",
+      "step_1": "Llena el formulario de inscripción. Toma alrededor de un minuto.",
+      "step_2": "Envía tu depósito de {{deposit}} por Zelle o Venmo. Verás las instrucciones de inmediato y te enviaré una copia por correo.",
+      "step_3": "En cuanto reciba tu depósito, te confirmaré tu lugar por correo y te enviaré el enlace de Zoom."
+    },
+    "form": {
+      "title": "Inscríbete en la clase",
+      "full_name": "Nombre completo",
+      "full_name_placeholder": "Tu nombre completo",
+      "email": "Correo electrónico",
+      "email_placeholder": "tu@correo.com",
+      "phone": "Teléfono",
+      "phone_placeholder": "(555) 123-4567",
+      "due_date": "Fecha probable de parto",
+      "partner_name": "Nombre de tu acompañante de parto",
+      "partner_hint": "El costo de la clase te incluye a ti y a un(a) acompañante de parto.",
+      "first_baby": "¿Es tu primer bebé?",
+      "first_baby_yes": "Sí, es mi primer bebé",
+      "first_baby_no": "No, ya he dado a luz antes",
+      "birth_place": "¿Dónde planeas dar a luz?",
+      "birth_place_hospital": "Hospital",
+      "birth_place_birth_center": "Centro de parto",
+      "birth_place_home": "En casa",
+      "birth_place_unsure": "Todavía no lo sé",
+      "select": "Selecciona...",
+      "optional": "(opcional)",
+      "message": "¿Preguntas o algo que quieras que sepa?",
+      "message_placeholder": "Cuéntame lo que me ayude a acompañarte mejor",
+      "agree_prefix": "Acepto los",
+      "terms_link": "Términos de Servicio",
+      "and": "y la",
+      "privacy_link": "Política de Privacidad",
+      "no_payment": "No se cobra ningún pago en este sitio. Me enviarás tu depósito directamente por Zelle o Venmo.",
+      "submit": "Inscribirme y ver instrucciones de depósito",
+      "submitting": "Inscribiendo...",
+      "errors": {
+        "required": "Este campo es obligatorio.",
+        "email": "Por favor ingresa un correo electrónico válido.",
+        "phone": "Por favor ingresa un número de teléfono válido.",
+        "due_date": "Por favor ingresa una fecha de parto futura.",
+        "consent": "Por favor acepta los Términos de Servicio y la Política de Privacidad.",
+        "submit": "No se pudo enviar tu inscripción. Por favor intenta de nuevo o escribe a violadoula@gmail.com."
+      }
+    },
+    "success": {
+      "title": "¡Ya casi estás, {{name}}!",
+      "intro": "Para reservar tu lugar, envía tu depósito de {{deposit}} por cualquiera de estas opciones:",
+      "zelle_hint": "Aparece como {{name}}",
+      "open_venmo": "Abrir Venmo",
+      "copy": "Copiar",
+      "copied": "¡Copiado!",
+      "note": "Por favor incluye tu nombre en la nota del pago: {{name}}",
+      "next": "En cuanto reciba tu depósito, te enviaré un correo confirmando tu lugar junto con el enlace de Zoom. Tu depósito se aplica al costo de {{fee}} de la clase; el saldo restante de {{balance}} se paga antes de la primera clase, el {{firstClass}}.",
+      "email_sent": "También te envié estas instrucciones a {{email}}. Si no las ves, revisa tu carpeta de spam.",
+      "email_failed": "Por favor guarda estas instrucciones. No pude enviarte una copia por correo, pero recibí tu inscripción."
+    },
+    "closed": {
+      "title": "Las inscripciones para esta clase están cerradas",
+      "message": "Únete a mi boletín para ser la primera en saber cuándo abre la próxima clase grupal de HypnoBirthing®.",
+      "contact": "¿Tienes preguntas? Contáctame"
+    },
+    "email": {
+      "welcome_subject": "¡Ya casi estás! Reserva tu lugar en la clase de HypnoBirthing®"
+    },
+    "confirmation": {
+      "subject": "¡Tu lugar está reservado! Clase grupal de HypnoBirthing®",
+      "body": "Hola {{name}},\n\nRecibí tu depósito de {{deposit}}. ¡Gracias! Tu lugar en la clase grupal de HypnoBirthing® está oficialmente reservado.\n\nDetalles de la clase:\n• {{dates}}\n• {{time}}\n• Enlace de Zoom: [AGREGAR ENLACE DE ZOOM]\n\nEl saldo restante de {{balance}} se paga antes de la primera clase, el {{firstClass}}, por Zelle ({{zelleEmail}}) o Venmo (@{{venmoHandle}}).\n\n¡Me emociona mucho comenzar este camino contigo!\n\nCon cariño,\nVio"
+    }
   }
 }

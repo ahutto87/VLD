@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import SubscribePage from './components/SubscribePage';
+import HypnobirthingClassPage from './components/HypnobirthingClassPage';
 import {
   websiteSchema,
   localBusinessSchema,
@@ -62,6 +63,7 @@ function App() {
       <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/subscribe" element={<SubscribePage />} />
+      <Route path="/hypnobirthing-class" element={<HypnobirthingClassPage />} />
     </Routes>
   );
 }
