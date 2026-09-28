@@ -1,6 +1,9 @@
 // Email service using EmailJS for client-side email sending
 // Note: EmailJS requires setup at emailjs.com with service ID, template IDs, and public key
 
+import i18n from '../i18n/i18n';
+import { HYPNOBIRTHING_CLASS, getClassDetails, type ClassLanguage } from './hypnobirthingClass';
+
 interface ContactFormData {
   name: string;
   email: string;
@@ -25,13 +28,27 @@ interface HypnoBirthingFormData {
   acceptTerms: boolean;
 }
 
+export interface ClassRegistrationData {
+  fullName: string;
+  email: string;
+  phone: string;
+  dueDate: string; // YYYY-MM-DD from the date input
+  partnerName: string;
+  firstBaby: '' | 'yes' | 'no';
+  birthPlace: '' | 'hospital' | 'birth_center' | 'home' | 'unsure';
+  message: string;
+  language: ClassLanguage;
+}
+
 // EmailJS configuration
 export const EMAILJS_CONFIG = {
   SERVICE_ID: 'service_kd7nnoj',
   TEMPLATE_IDS: {
     CONTACT_FORM: 'contact_template', // Contact form template
     HYPNOBIRTHING_ENROLLMENT: 'hypnobirthing_template', // HypnoBirthing enrollment template
-    AUTO_REPLY: 'auto_reply_template' // Auto-reply template (available when paid account activates)
+    AUTO_REPLY: 'auto_reply_template', // Auto-reply template (available when paid account activates)
+    CLASS_REGISTRATION: 'class_signup_template', // Group class registration → Vio (email-templates/)
+    CLASS_WELCOME: 'class_welcome_template' // Group class deposit instructions → registrant (email-templates/)
   },
   PUBLIC_KEY: '9l2ro5MAeErk2Bug4'
 };
@@ -141,6 +158,102 @@ export const sendAutoReply = async (clientEmail: string, clientName: string, for
   } catch (error) {
     console.error('❌ Auto-reply email failed:', error);
     return false;
+  }
+};
+
+const formatDueDate = (isoDate: string) => {
+  const [year, month, day] = isoDate.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+};
+
+// HypnoBirthing® group class registration. Notifies Vio first so a registration is
+// never lost, then emails the registrant their deposit instructions.
+export const sendClassRegistration = async (
+  data: ClassRegistrationData
+): Promise<{ registered: boolean; welcomeSent: boolean }> => {
+  const emailjs = await import('@emailjs/browser').catch((error) => {
+    console.error('❌ EmailJS failed to load:', error);
+    return null;
+  });
+  if (!emailjs) return { registered: false, welcomeSent: false };
+
+  const tEn = i18n.getFixedT('en');
+  const tStudent = i18n.getFixedT(data.language);
+  const detailsForVio = getClassDetails('en');
+  const detailsForStudent = getClassDetails(data.language);
+  const firstName = data.fullName.split(/\s+/)[0];
+  const { zelle, venmo } = HYPNOBIRTHING_CLASS;
+
+  // Pre-written "your spot is reserved" email in the student's language, opened by
+  // the mailto button in Vio's notification
+  const confirmationBody = tStudent('hb_class.confirmation.body', {
+    ...detailsForStudent,
+    name: firstName,
+    zelleEmail: zelle.email,
+    venmoHandle: venmo.handle
+  });
+
+  try {
+    console.log('📧 Sending HypnoBirthing class registration');
+    await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_IDS.CLASS_REGISTRATION,
+      {
+        student_name: data.fullName,
+        student_email: data.email,
+        student_phone: data.phone,
+        due_date: formatDueDate(data.dueDate),
+        partner_name: data.partnerName || '—',
+        first_baby: data.firstBaby ? tEn(`hb_class.form.first_baby_${data.firstBaby}`) : '—',
+        birth_place: data.birthPlace ? tEn(`hb_class.form.birth_place_${data.birthPlace}`) : '—',
+        message: data.message || '—',
+        language: data.language === 'es' ? 'Spanish' : 'English',
+        class_dates: detailsForVio.dates,
+        first_class: detailsForVio.firstClass,
+        deposit: detailsForVio.deposit,
+        balance: detailsForVio.balance,
+        confirm_to: encodeURIComponent(data.email).replace('%40', '@'),
+        confirm_subject: encodeURIComponent(tStudent('hb_class.confirmation.subject')),
+        confirm_body: encodeURIComponent(confirmationBody)
+      },
+      EMAILJS_CONFIG.PUBLIC_KEY
+    );
+    console.log('✅ Class registration email sent successfully');
+  } catch (error) {
+    console.error('❌ Class registration email failed:', error);
+    return { registered: false, welcomeSent: false };
+  }
+
+  // Zelle/Venmo details are written into the welcome template itself, so nobody
+  // calling EmailJS directly can change where deposits go
+  try {
+    await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_IDS.CLASS_WELCOME,
+      {
+        to_email: data.email,
+        to_name: firstName,
+        is_spanish: data.language === 'es',
+        subject: tStudent('hb_class.email.welcome_subject'),
+        student_name: data.fullName,
+        class_dates: detailsForStudent.dates,
+        class_time: detailsForStudent.time,
+        first_class: detailsForStudent.firstClass,
+        fee: detailsForStudent.fee,
+        deposit: detailsForStudent.deposit,
+        balance: detailsForStudent.balance
+      },
+      EMAILJS_CONFIG.PUBLIC_KEY
+    );
+    console.log('✅ Class welcome email sent successfully');
+    return { registered: true, welcomeSent: true };
+  } catch (error) {
+    console.error('❌ Class welcome email failed:', error);
+    return { registered: true, welcomeSent: false };
   }
 };
 
