@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "qr": "node scripts/generate-qr.mjs"
@@ -22,7 +21,6 @@
     "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.58.1",
     "react-i18next": "^15.5.3",
     "react-router-dom": "^7.8.2",
