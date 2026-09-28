@@ -13,32 +13,14 @@ import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import SubscribePage from './components/SubscribePage';
-import {
-  websiteSchema,
-  localBusinessSchema,
-  personSchema,
-  professionalServiceSchema,
-  generateBreadcrumbSchema
-} from './utils/schemas';
+import { pagePaths } from './utils/seo';
 
 // Homepage component with all sections
 function HomePage() {
-  // Generate structured data for the homepage
-  const structuredData = [
-    websiteSchema,
-    localBusinessSchema,
-    personSchema,
-    professionalServiceSchema,
-    generateBreadcrumbSchema(['home'], 'en') // Will be dynamic with routing
-  ];
-
   return (
     <div className="min-h-screen">
-      {/* SEO Head with structured data for homepage */}
-      <SEOHead
-        pageKey="home"
-        structuredData={structuredData}
-      />
+      {/* Structured data (JSON-LD) for the homepage lives in index.html */}
+      <SEOHead pageKey="home" />
 
       <Header />
       <Hero />
@@ -58,10 +40,10 @@ function HomePage() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/terms-of-service" element={<TermsOfService />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/subscribe" element={<SubscribePage />} />
+      <Route path={pagePaths.home} element={<HomePage />} />
+      <Route path={pagePaths.terms} element={<TermsOfService />} />
+      <Route path={pagePaths.privacy} element={<PrivacyPolicy />} />
+      <Route path={pagePaths.subscribe} element={<SubscribePage />} />
     </Routes>
   );
 }

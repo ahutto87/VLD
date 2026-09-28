@@ -321,14 +321,36 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
   }
 };
 
+// URL path of every page that has its own route. App.tsx builds its <Route>s
+// from this, and the build writes a <path>.html copy of index.html for each
+// one (scripts/route-html.ts) so crawlers and link previews that don't run
+// JavaScript get that page's tags. A new page needs an entry here and in
+// seoConfigs under the same key.
+export const pagePaths = {
+  home: '/',
+  subscribe: '/subscribe',
+  terms: '/terms-of-service',
+  privacy: '/privacy-policy'
+} as const;
+
+export type PageKey = keyof typeof pagePaths;
+
+// Spanish is served from the same path with ?lang=es (read by the i18n language detector)
+const pageUrl = (pageKey: PageKey, language: 'en' | 'es') => {
+  const path = pagePaths[pageKey];
+  if (language === 'es') return `${baseSEOConfig.siteUrl}${path}?lang=es`;
+  return path === '/' ? baseSEOConfig.siteUrl : `${baseSEOConfig.siteUrl}${path}`;
+};
+
 // Generate meta tags for a specific page
-export const generateSEOTags = (pageKey: keyof typeof seoConfigs, language: 'en' | 'es') => {
-  const config = seoConfigs[pageKey]?.[language] || seoConfigs.home[language];
-  const canonical = config.canonical || `${baseSEOConfig.siteUrl}${pageKey === 'home' ? '' : `/${pageKey}`}`;
+export const generateSEOTags = (pageKey: PageKey, language: 'en' | 'es') => {
+  const config = (seoConfigs[pageKey] || seoConfigs.home)[language];
+  const canonical = config.canonical || pageUrl(pageKey, language);
   
   return {
     title: config.title,
     meta: [
+      { name: 'title', content: config.title },
       { name: 'description', content: config.description },
       { name: 'keywords', content: [...config.keywords, ...baseSEOConfig.defaultKeywords].join(', ') },
       { name: 'author', content: 'Viomar Güerere (Vio La Doula)' },
@@ -348,9 +370,11 @@ export const generateSEOTags = (pageKey: keyof typeof seoConfigs, language: 'en'
       { property: 'og:image:alt', content: 'Vio La Doula - Professional Doula Services' },
       { property: 'og:site_name', content: baseSEOConfig.siteName },
       { property: 'og:locale', content: language === 'en' ? 'en_US' : 'es_US' },
+      { property: 'og:locale:alternate', content: language === 'en' ? 'es_US' : 'en_US' },
       
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:url', content: canonical },
       { name: 'twitter:title', content: config.title },
       { name: 'twitter:description', content: config.description },
       { name: 'twitter:image', content: `${baseSEOConfig.siteUrl}${config.ogImage || baseSEOConfig.defaultImage}` },
@@ -358,8 +382,9 @@ export const generateSEOTags = (pageKey: keyof typeof seoConfigs, language: 'en'
     ],
     link: [
       { rel: 'canonical', href: canonical },
-      { rel: 'alternate', hreflang: language === 'en' ? 'es' : 'en', href: `${canonical}?lang=${language === 'en' ? 'es' : 'en'}` },
-      { rel: 'alternate', hreflang: 'x-default', href: canonical }
+      { rel: 'alternate', hreflang: 'en', href: pageUrl(pageKey, 'en') },
+      { rel: 'alternate', hreflang: 'es', href: pageUrl(pageKey, 'es') },
+      { rel: 'alternate', hreflang: 'x-default', href: pageUrl(pageKey, 'en') }
     ]
   };
 };

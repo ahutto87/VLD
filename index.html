@@ -132,7 +132,8 @@
     }
     </script>
 
-    <!-- Additional meta tags will be managed by react-helmet-async -->
+    <!-- SEOHead (src/components/SEOHead.tsx) updates these tags per page and language at runtime.
+         The build writes a copy of this file per route with that page's tags (scripts/route-html.ts). -->
   </head>
   <body>
     <div id="root"></div>
