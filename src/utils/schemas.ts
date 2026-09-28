@@ -75,8 +75,8 @@ export const professionalServiceSchema = {
   url: 'https://www.violadoula.com',
   logo: 'https://www.violadoula.com/VD_ARCH-LOGO_CREAM.png',
   image: 'https://www.violadoula.com/VD_ARCH-LOGO_CREAM.png',
-  telephone: '+1-XXX-XXX-XXXX', // Add actual phone number
-  email: 'info@violadoula.com', // Add actual email
+  telephone: '+1-346-380-8476',
+  email: 'violadoula@gmail.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'The Woodlands',
@@ -311,8 +311,8 @@ export const localBusinessSchema = {
     'https://www.violadoula.com/VD_ARCH-LOGO_CREAM.png',
     'https://www.violadoula.com/Viomar_Professional_Portrait.jpg'
   ],
-  telephone: '+1-XXX-XXX-XXXX', // Add actual phone
-  email: 'info@violadoula.com', // Add actual email
+  telephone: '+1-346-380-8476',
+  email: 'violadoula@gmail.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'The Woodlands',
