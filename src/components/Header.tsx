@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     { key: 'hypnobirthing', href: '#hypnobirthing' },
     { key: 'coaching', href: '#coaching' },
     { key: 'calculator', href: '#calculator' },
-    { key: 'blog', href: '#blog' },
+    // { key: 'blog', href: '#blog' }, // Hidden until the Blog section exists
     { key: 'contact', href: '#contact' }
   ];
 
