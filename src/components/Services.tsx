@@ -13,13 +13,13 @@ const Services: React.FC = () => {
       key: 'essentials',
       icon: <Heart className="w-8 h-8" />,
       popular: false,
-      service: SERVICES.BASIC_BIRTH_SUPPORT
+      service: SERVICES.ESSENTIALS_PACKAGE
     },
     {
       key: 'premium',
       icon: <Baby className="w-8 h-8" />,
       popular: true,
-      service: SERVICES.COMPLETE_BIRTH_EXPERIENCE
+      service: SERVICES.PREMIUM_PACKAGE
     }
   ];
 
@@ -30,7 +30,7 @@ const Services: React.FC = () => {
 
   const handleScheduleConsultation = () => {
     trackButtonClick('Services Schedule Consultation');
-    scrollToContact(SERVICES.GENERAL_CONSULTATION);
+    scrollToContact(SERVICES.DISCOVERY_CALL);
   };
 
   return (

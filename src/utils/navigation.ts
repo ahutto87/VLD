@@ -34,30 +34,32 @@ export const scrollToHypnoBirthing = () => {
   }
 };
 
-// Service definitions for different button contexts
+// Services a visitor can pick in the contact form, in dropdown order. Buttons
+// across the site pre-select one of these, and the form builds its options from
+// this list, so the two can't drift apart.
 export const SERVICES = {
-  BASIC_BIRTH_SUPPORT: {
-    name: 'Basic Birth Support',
+  ESSENTIALS_PACKAGE: {
+    name: 'The Essentials Package',
     type: 'birth_support' as const
   },
-  COMPLETE_BIRTH_EXPERIENCE: {
-    name: 'Complete Birth Experience', 
+  PREMIUM_PACKAGE: {
+    name: 'The Premium Package',
     type: 'birth_support' as const
   },
-  FULL_SPECTRUM_SUPPORT: {
-    name: 'Complete Birth Experience + HypnoBirthing®',
+  DOULA_PLUS_HYPNOBIRTHING: {
+    name: 'Doula Package + HypnoBirthing®',
     type: 'birth_support' as const
   },
-  HYPNOBIRTHING_CLASSES: {
-    name: 'HypnoBirthing® Classes',
+  HYPNOBIRTHING_COURSE: {
+    name: 'HypnoBirthing® Course',
     type: 'hypnobirthing' as const
   },
   MOTHERHOOD_COACHING: {
     name: 'Motherhood Coaching',
     type: 'coaching' as const
   },
-  GENERAL_CONSULTATION: {
-    name: 'General Consultation',
+  DISCOVERY_CALL: {
+    name: 'Discovery Call',
     type: 'consultation' as const
   }
 } as const;
