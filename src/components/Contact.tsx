@@ -17,7 +17,7 @@ import {
 import { FloralBorder } from './DecorativeElements';
 import { sendContactForm, sendAutoReply } from '../utils/emailService';
 import type { ServiceInfo } from '../utils/navigation';
-import { trackButtonClick } from '../utils/navigation';
+import { SERVICES, trackButtonClick } from '../utils/navigation';
 
 interface ContactFormData {
   name: string;
@@ -67,14 +67,7 @@ const Contact: React.FC = () => {
     }
   };
 
-  const serviceOptions = [
-    'Basic Birth Support',
-    'Complete Birth Experience',
-    'Complete Birth Experience + HypnoBirthing®',
-    'HypnoBirthing® Classes',
-    'Motherhood Coaching',
-    'General Consultation'
-  ];
+  const serviceOptions = Object.values(SERVICES).map((service) => service.name);
 
   const faqs = t('contact.faq.questions', { returnObjects: true }) as Array<{
     question: string;
@@ -90,8 +83,8 @@ const Contact: React.FC = () => {
     const formElement = document.querySelector('#contact form');
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setValue('service', 'General Consultation');
-      setPreSelectedService('General Consultation');
+      setValue('service', SERVICES.DISCOVERY_CALL.name);
+      setPreSelectedService(SERVICES.DISCOVERY_CALL.name);
     }
   };
 

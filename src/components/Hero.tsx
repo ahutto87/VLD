@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
 
   const handleBookConsultation = () => {
     trackButtonClick('Hero Book Consultation');
-    scrollToContact(SERVICES.GENERAL_CONSULTATION);
+    scrollToContact(SERVICES.DISCOVERY_CALL);
   };
 
   const handleLearnMore = () => {
