@@ -81,20 +81,40 @@
   "coaching": {
     "title": "Coaching de Maternidad",
     "subtitle": "Apoyo personalizado para tu viaje de crianza",
-    "description": "Sesiones individuales de coaching para apoyarte durante el embarazo, parto y maternidad temprana.",
-    "session_types": {
-      "prenatal": {
-        "name": "Coaching Prenatal",
-        "price": "$75/sesión",
-        "description": "Prepárate mental y emocionalmente para el parto y la paternidad"
-      },
-      "postpartum": {
-        "name": "Apoyo Postparto",
-        "price": "$75/sesión",
-        "description": "Navega los desafíos de la maternidad temprana con confianza"
-      }
+    "one_on_one": {
+      "name": "Coaching Individual",
+      "price": "$100/sesión",
+      "description": "Cada sesión se adapta a ti y a tus necesidades, y puede abarcar desde el primer pensamiento de convertirte en mamá hasta cualquier etapa del camino completo de la maternidad."
     },
-    "book_session": "Reservar Sesión"
+    "book_session": "Reservar Sesión",
+    "what_to_expect": {
+      "title": "Qué Esperar en Tu Sesión",
+      "items": [
+        { "title": "Sesiones de 60 Minutos", "description": "Tiempo dedicado completamente a tus necesidades" },
+        { "title": "Apoyo Personalizado", "description": "Orientación adaptada a tu situación única" },
+        { "title": "Cuidado Compasivo", "description": "Un ambiente de apoyo, libre de juicios" },
+        { "title": "Horarios Flexibles", "description": "Disponible por las noches y los fines de semana" }
+      ]
+    },
+    "specialized_areas": {
+      "title": "Áreas Especializadas de Coaching",
+      "items": [
+        { "title": "Preparación para el Parto", "description": "Preparación mental y emocional para el trabajo de parto y el nacimiento" },
+        { "title": "Adaptación Postparto", "description": "Cómo afrontar los retos de la nueva maternidad" },
+        { "title": "Retos de la Lactancia", "description": "Soluciones y apoyo para mejorar tu experiencia de lactancia" },
+        { "title": "Apoyo para la Pareja", "description": "Ayudar a la pareja a entender su papel de apoyo" },
+        { "title": "Recuperación de un Parto Traumático", "description": "Sanar y procesar experiencias de parto difíciles" },
+        { "title": "Preparación para el Segundo Bebé", "description": "Manejo de expectativas y dinámicas familiares" }
+      ]
+    },
+    "virtual": {
+      "title": "Sesiones Virtuales Disponibles",
+      "description": "Todas las sesiones de coaching están disponibles en persona y de forma virtual por videollamada segura. Las sesiones virtuales ofrecen el mismo nivel de apoyo y conexión desde la comodidad de tu hogar.",
+      "in_person_title": "Sesiones en Persona",
+      "in_person_details": "Área del Norte de Houston, TX • Puede aplicar un cargo por traslado",
+      "virtual_title": "Sesiones Virtuales",
+      "virtual_details": "Plataforma de video segura • Disponible en todo el mundo"
+    }
   },
   "calculator": {
     "title": "Calculadora de Fecha de Parto",

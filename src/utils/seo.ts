@@ -180,7 +180,7 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
   coaching: {
     en: {
       title: 'Motherhood Coaching Services | The Woodlands | Vio La Doula',
-      description: 'Personalized motherhood coaching in The Woodlands and Houston area. Prenatal and postpartum coaching sessions $75 each. Support for your parenting journey.',
+      description: 'Personalized motherhood coaching in The Woodlands and Houston area. One-on-one coaching sessions $100 each, tailored to every stage of the motherhood journey.',
       keywords: [
         'motherhood coaching The Woodlands',
         'prenatal coaching',
@@ -194,7 +194,7 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
     },
     es: {
       title: 'Servicios de Coaching de Maternidad | The Woodlands | Vio La Doula',
-      description: 'Coaching personalizado de maternidad en The Woodlands y área de Houston. Sesiones de coaching prenatal y postparto $75 cada una. Apoyo para tu viaje de crianza.',
+      description: 'Coaching personalizado de maternidad en The Woodlands y área de Houston. Sesiones individuales de coaching de $100 cada una, adaptadas a cada etapa del camino de la maternidad.',
       keywords: [
         'coaching maternidad The Woodlands',
         'coaching prenatal',
