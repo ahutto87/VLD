@@ -81,20 +81,40 @@
   "coaching": {
     "title": "Motherhood Coaching",
     "subtitle": "Personalized support for your parenting journey",
-    "description": "One-on-one coaching sessions to support you through pregnancy, birth, and early motherhood.",
-    "session_types": {
-      "prenatal": {
-        "name": "Prenatal Coaching",
-        "price": "$75/session",
-        "description": "Prepare mentally and emotionally for birth and parenthood"
-      },
-      "postpartum": {
-        "name": "Postpartum Support",
-        "price": "$75/session", 
-        "description": "Navigate the challenges of early motherhood with confidence"
-      }
+    "one_on_one": {
+      "name": "One-on-one Coaching",
+      "price": "$100/session",
+      "description": "Each session is tailored to you and your needs, and can cover anything from the first thought of becoming a mom through any stage of the full journey of motherhood."
     },
-    "book_session": "Book Session"
+    "book_session": "Book Session",
+    "what_to_expect": {
+      "title": "What to Expect in Your Session",
+      "items": [
+        { "title": "60-Minute Sessions", "description": "Dedicated time focused entirely on your needs" },
+        { "title": "Personalized Support", "description": "Customized guidance based on your unique situation" },
+        { "title": "Compassionate Care", "description": "Non-judgmental, supportive environment" },
+        { "title": "Flexible Scheduling", "description": "Available evenings and weekends" }
+      ]
+    },
+    "specialized_areas": {
+      "title": "Specialized Coaching Areas",
+      "items": [
+        { "title": "Birth Preparation", "description": "Mental and emotional preparation for labor and delivery" },
+        { "title": "Postpartum Adjustment", "description": "Navigating the challenges of new motherhood" },
+        { "title": "Breastfeeding Challenges", "description": "Troubleshooting and optimizing your breastfeeding journey" },
+        { "title": "Partner Support", "description": "Helping partners understand their supportive role" },
+        { "title": "Birth Trauma Recovery", "description": "Healing and processing difficult birth experiences" },
+        { "title": "Second Baby Preparation", "description": "Managing expectations and family dynamics" }
+      ]
+    },
+    "virtual": {
+      "title": "Virtual Sessions Available",
+      "description": "All coaching sessions are available both in-person and virtually via secure video call. Virtual sessions provide the same level of support and connection from the comfort of your own home.",
+      "in_person_title": "In-Person Sessions",
+      "in_person_details": "North Houston, TX area • Travel fee may apply",
+      "virtual_title": "Virtual Sessions",
+      "virtual_details": "Secure video platform • Available worldwide"
+    }
   },
   "calculator": {
     "title": "Due Date Calculator",
