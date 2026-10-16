@@ -28,6 +28,8 @@
   "services": {
     "title": "Apoyo de Parto y Postparto",
     "subtitle": "Paquetes integrales de doula adaptados a tus necesidades. Todos los servicios de doula incluyen una doula de respaldo.",
+    "deposit_prompt": "¿Ya reservaste con Vio? Paga tu depósito de forma segura en línea.",
+    "pay_deposit": "Pagar depósito de $1,000 con tarjeta",
     "essentials": {
       "name": "El Paquete Esencial",
       "price": "$2,200",

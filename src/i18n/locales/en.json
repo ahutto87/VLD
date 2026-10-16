@@ -28,6 +28,8 @@
   "services": {
     "title": "Birth & Postpartum Support",
     "subtitle": "Comprehensive doula packages tailored to your needs. All doula services include a backup doula.",
+    "deposit_prompt": "Already booked with Vio? Pay your deposit securely online.",
+    "pay_deposit": "Pay $1,000 deposit by card",
     "essentials": {
       "name": "The Essentials Package",
       "price": "$2,200",

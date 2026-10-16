@@ -4,10 +4,15 @@ This file is the single source of truth for finishing the Stripe Checkout integr
 
 Customers pay on a Stripe-hosted Checkout page. The website is static (GitHub Pages), so it can't hold
 Stripe's secret key. A small Node/Express server in [server/](server/) creates the Checkout Session.
-After registering, customers see a "Pay $100 by card" option next to Zelle and Venmo on the
-[HypnoBirthing® class page](src/components/HypnobirthingClassPage.tsx). That button stays hidden until
-the `VITE_CHECKOUT_SERVER_URL` variable is set, so nothing changes on the live site until the server
-is deployed.
+The site sells two deposits:
+
+| Item (`item` form field) | Stripe product | Where the button is |
+|---|---|---|
+| `hypnobirthing_class_deposit` — $100 | `prod_VSAGVj9RBZjZN0` | [HypnoBirthing® class page](src/components/HypnobirthingClassPage.tsx), after registering, next to Zelle and Venmo |
+| `doula_deposit` — $1,000 | `prod_VSA1tUBSJ6cZdH` | "Payment Plans" card in the [Services section](src/components/Services.tsx) |
+
+Both buttons stay hidden until the `VITE_CHECKOUT_SERVER_URL` variable is set, so nothing changes on
+the live site until the server is deployed.
 
 ## Values to Replace
 
@@ -22,11 +27,21 @@ The following values are placeholders and must be updated before going live.
 | mode | payment | Set to "payment" for one-time charges or "subscription" for recurring billing. The class deposit is a one-time charge, so `payment` is correct. |
 | success_url | `${DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}` | Your actual post-payment success page URL. Keep the `{CHECKOUT_SESSION_ID}` template. The site has no `/success` page, so a good choice is `${DOMAIN}/hypnobirthing-class?paid=1&session_id={CHECKOUT_SESSION_ID}`. |
 | cancel_url | `${DOMAIN}` | Your actual cancel/return page URL, e.g. `${DOMAIN}/hypnobirthing-class`. |
-| line_items[].price | `price_...` | Your actual Stripe Price ID from the Dashboard (https://dashboard.stripe.com/prices) or API. Create a product named "HypnoBirthing® Group Class Deposit" with a one-time price of **$100.00 USD** to match the deposit shown on the site. |
 | STRIPE_SECRET_KEY | `sk_test_...` | Your API key. A restricted key (`rk_...`) with write access to Checkout Sessions is safer than the full secret key. |
 | STRIPE_WEBHOOK_SECRET | `whsec_...` | The signing secret of your webhook endpoint (see step 4 below). |
 | DOMAIN | `http://localhost:5173` | `https://www.violadoula.com` in production. |
 
+`line_items` is done: the server looks up the product for the chosen `item` (`PRODUCTS` in
+[server/server.js](server/server.js)) and charges that product's **default price**. To change an amount,
+add a new price to the product in Stripe and make it the default. Also update the button text in
+`src/i18n/locales/en.json` and `es.json` (`services.pay_deposit`) and, for the class,
+`deposit` in `src/utils/hypnobirthingClass.ts`.
+
+**Test vs. live mode:** product IDs only exist in the mode they were created in. If you made the two
+products in live mode, a test key (`sk_test_`/`rk_test_`) gets "No such product". To test, create
+matching products in test mode or a sandbox, and put their IDs in `PRODUCTS` while testing. Before
+launch, switch back to the live IDs above. Each product also needs a default price, which Stripe sets
+when you create the product with a price.
 ## Configured Parameters
 
 These parameters were configured in Checkout Studio and are already set correctly.
@@ -86,7 +101,8 @@ stripe listen --forward-to localhost:4242/api/webhook
 VITE_CHECKOUT_SERVER_URL=http://localhost:4242 npm run dev
 ```
 
-Then open http://localhost:5173/hypnobirthing-class, register, and click **Pay $100 by card**.
+Then open http://localhost:5173/hypnobirthing-class, register, and click **Pay $100 by card**. For the
+doula deposit, click **Pay $1,000 deposit by card** in the Services section of the homepage.
 
 ### 4. Deploy the server (required — GitHub Pages can't run it)
 
@@ -115,23 +131,27 @@ server/
 ├── package.json     Express + Stripe; `npm start` (production), `npm run dev` (local, reads .env)
 ├── server.js        POST /api/create-checkout-session and POST /api/webhook
 └── .env.example     Environment variables the server needs
+src/utils/checkout.ts  Checkout server URL, the item names, whether the buttons show
 STRIPE_INTEGRATION_TODO.md
 ```
 
-Changed files: [HypnobirthingClassPage.tsx](src/components/HypnobirthingClassPage.tsx) (card option),
+Changed files: [HypnobirthingClassPage.tsx](src/components/HypnobirthingClassPage.tsx) (class deposit),
+[Services.tsx](src/components/Services.tsx) (doula deposit),
 [en.json](src/i18n/locales/en.json) / [es.json](src/i18n/locales/es.json) (button text),
 [deploy.yml](.github/workflows/deploy.yml) (build variable), [.gitignore](.gitignore) (`.env`).
 
 ## How it works
 
-1. A parent registers on `/hypnobirthing-class`. The success screen shows a card option alongside Zelle
-   and Venmo.
-2. **Pay $100 by card** is a plain form POST to `<server>/api/create-checkout-session`. The server
-   creates a Checkout Session and answers with a 303 redirect to Stripe's hosted payment page. A form
-   POST is a normal page navigation, so the server needs no CORS setup.
+1. A parent registers on `/hypnobirthing-class` and sees a card option alongside Zelle and Venmo, or a
+   booked doula client clicks the deposit button in the Services section.
+2. Each button is a plain form POST to `<server>/api/create-checkout-session` with a hidden `item`
+   field. The server only accepts the items in its `PRODUCTS` list. It looks up that product's default
+   price, creates a Checkout Session tagged with `metadata.item`, and answers with a 303 redirect to
+   Stripe's hosted payment page. A form POST is a normal page navigation, so the server needs no CORS
+   setup.
 3. The customer pays on Stripe, then lands on `success_url`, or on `cancel_url` if they back out.
-4. Stripe calls `/api/webhook`. The server verifies the signature and logs the payment once
-   `payment_status` isn't `unpaid`.
+4. Stripe calls `/api/webhook`. The server verifies the signature and logs the payment, including which
+   item was paid, once `payment_status` isn't `unpaid`.
 
 ## Testing
 
@@ -149,7 +169,8 @@ only after a successful end-to-end test.
 ## Next steps
 
 - **Fulfillment (required before launch):** the webhook handler in [server/server.js](server/server.js)
-  only logs payments. Fill in its `TODO` to confirm the registrant's spot, e.g. email Vio. Do this in the
+  only logs payments. Fill in its `TODO` to act on each payment (`session.metadata.item` says which
+  deposit), e.g. email Vio to confirm the class spot or the doula booking. Do this in the
   webhook, not on the success page: customers don't always reach the success page after paying.
   Stripe can also email Vio about each payment (Dashboard → Settings → Notifications) and send
   customers receipts (Settings → Customer emails).
@@ -158,12 +179,14 @@ only after a successful end-to-end test.
   into the session.
 - **Success page:** add a "payment received" message on `/hypnobirthing-class` (or a new route listed in
   `pagePaths` in `src/utils/seo.ts`) and point `success_url` at it.
-- **Remaining balance:** the $250 balance could also be paid by card. Add a second Price and pass the
-  chosen Price ID from the page.
+- **Remaining balances:** the $250 class balance and the doula balance could also be paid by card. Add
+  a product for each, an entry in `PRODUCTS`, and a button that sends that `item`.
 - **Welcome email:** [email-templates/class-welcome.html](email-templates/class-welcome.html) still lists
   only Zelle and Venmo. Add a card link there once the button is live.
-- **New cohorts:** if the deposit amount changes in `src/utils/hypnobirthingClass.ts`, create a matching
-  Stripe Price and update `line_items` too.
+- **New cohorts:** if the deposit amount changes in `src/utils/hypnobirthingClass.ts`, change the class
+  deposit product's default price in Stripe to match.
+- **Services page text:** the "Payment Plans" card still says "50% Deposit — At contract signing". That
+  doesn't match a $1,000 deposit, so update the wording if the deposit is now a flat $1,000.
 - Review the go-live checklist: https://docs.stripe.com/get-started/checklist/go-live.md
 
 ## Resources

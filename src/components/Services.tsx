@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Check, Heart, Baby } from 'lucide-react';
+import { Check, Heart, Baby, CreditCard } from 'lucide-react';
 import { SectionDivider } from './DecorativeElements';
 import { scrollToContact, SERVICES, trackButtonClick } from '../utils/navigation';
+import { checkoutFormAction, isCardPaymentEnabled, type CheckoutItem } from '../utils/checkout';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
@@ -135,6 +136,19 @@ const Services: React.FC = () => {
                 <div className="text-sm text-gray-600">By 36 weeks gestation</div>
               </div>
             </div>
+            {isCardPaymentEnabled && (
+              <form action={checkoutFormAction} method="POST" className="mt-8 space-y-3">
+                <input type="hidden" name="item" value={'doula_deposit' satisfies CheckoutItem} />
+                <p className="text-gray-600">{t('services.deposit_prompt')}</p>
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-coral-300 hover:bg-coral-200 text-white font-medium transition-colors"
+                >
+                  <CreditCard className="w-4 h-4" />
+                  {t('services.pay_deposit')}
+                </button>
+              </form>
+            )}
           </div>
 
           <button 

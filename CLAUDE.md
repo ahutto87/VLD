@@ -15,7 +15,7 @@ Professional bilingual (English/Spanish) doula website for Viomar Güerere — [
 - **Internationalization:** react-i18next for English/Spanish toggle
 - **Forms:** react-hook-form with validation
 - **Email:** @emailjs/browser (production — Service ID: `service_kd7nnoj`, Public Key: `9l2ro5MAeErk2Bug4`)
-- **Payments:** Stripe Checkout (hosted) via a separate Express server in `server/` — the static site can't hold the secret key. The "Pay by card" button on /hypnobirthing-class shows only when `VITE_CHECKOUT_SERVER_URL` is set at build time. Setup status: `STRIPE_INTEGRATION_TODO.md`
+- **Payments:** Stripe Checkout (hosted) via a separate Express server in `server/` — the static site can't hold the secret key. Sells the $100 class deposit (/hypnobirthing-class) and $1,000 doula deposit (Services section); the "Pay by card" buttons show only when `VITE_CHECKOUT_SERVER_URL` is set at build time. Setup status: `STRIPE_INTEGRATION_TODO.md`
 - **SEO:** `SEOHead` updates index.html's head tags in place per page/language (react-helmet-async was removed: 2.x doesn't support React 19), per-route HTML written at build time, JSON-LD structured data in index.html
 - **Icons:** Lucide React
 - **Animations:** Framer Motion (installed, not yet implemented)

@@ -26,6 +26,7 @@ import {
   isClassRegistrationOpen,
   toClassLanguage
 } from '../utils/hypnobirthingClass';
+import { checkoutFormAction, isCardPaymentEnabled, type CheckoutItem } from '../utils/checkout';
 
 interface FormValues {
   fullName: string;
@@ -45,9 +46,6 @@ interface Registration {
   email: string;
   welcomeSent: boolean;
 }
-
-// The Stripe checkout server (server/). Card payment stays hidden until it's set at build time.
-const checkoutServerUrl: string | undefined = import.meta.env.VITE_CHECKOUT_SERVER_URL;
 
 const todayIso = () => {
   const now = new Date();
@@ -366,12 +364,13 @@ const HypnobirthingClassPage: React.FC = () => {
       </p>
 
       <div className="space-y-3 mb-6">
-        {checkoutServerUrl && (
+        {isCardPaymentEnabled && (
           <form
-            action={`${checkoutServerUrl.replace(/\/$/, '')}/api/create-checkout-session`}
+            action={checkoutFormAction}
             method="POST"
             className="rounded-2xl border border-coral-200 bg-white/80 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
           >
+            <input type="hidden" name="item" value={'hypnobirthing_class_deposit' satisfies CheckoutItem} />
             <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wide text-terracotta/70">
                 {t('hb_class.success.card_label')}

@@ -7,7 +7,24 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
-app.post('/api/create-checkout-session', async (req, res) => {
+// What the site's "Pay by card" buttons can buy (their hidden `item` field), mapped to
+// products in the Stripe Dashboard. Each one charges its product's default price, so
+// change amounts in Stripe, not here.
+const PRODUCTS = {
+  hypnobirthing_class_deposit: 'prod_VSAGVj9RBZjZN0', // $100
+  doula_deposit: 'prod_VSA1tUBSJ6cZdH', // $1,000
+};
+
+app.post('/api/create-checkout-session', express.urlencoded({ extended: false }), async (req, res) => {
+  const item = req.body?.item;
+  if (!Object.hasOwn(PRODUCTS, item)) {
+    return res.status(400).send('Unknown item');
+  }
+  const { default_price: price } = await stripe.products.retrieve(PRODUCTS[item]);
+  if (!price) {
+    throw new Error(`Stripe product ${PRODUCTS[item]} has no default price`);
+  }
+
   // TODO: Set mode to "subscription" if selling recurring products.
   const mode = 'payment';
 
@@ -21,10 +38,12 @@ app.post('/api/create-checkout-session', async (req, res) => {
     integration_identifier: 'hosted_web_0001',
     origin_context: 'web',
     mode,
-    // TODO: Replace the placeholders below; see STRIPE_INTEGRATION_TODO.md
+    // TODO: Replace the placeholder URLs below; see STRIPE_INTEGRATION_TODO.md
     success_url: `${process.env.DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.DOMAIN}`,
-    line_items: [{ price: 'price_...', quantity: 1 }],
+    line_items: [{ price, quantity: 1 }],
+    // Tells the webhook which deposit was paid
+    metadata: { item },
   };
   if (mode === 'subscription') {
     sessionParams.payment_method_collection = 'always';
@@ -55,7 +74,7 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), (req, res) =
       // Delayed payment methods complete the session before the money arrives
       if (session.payment_status !== 'unpaid') {
         // TODO: Fulfill — e.g. email Vio and confirm the registrant's spot
-        console.log('Payment received:', session.id, session.customer_details?.email);
+        console.log('Payment received:', session.metadata?.item, session.id, session.customer_details?.email);
       }
       break;
     }
