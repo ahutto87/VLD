@@ -291,6 +291,24 @@ export const seoConfigs: Record<string, Record<'en' | 'es', SEOConfig>> = {
       lang: 'es'
     }
   },
+  'payment-success': {
+    en: {
+      title: 'Payment Received | Vio La Doula',
+      description: 'Thank you! Your payment to Vio La Doula was received.',
+      keywords: [],
+      ogType: 'website',
+      noindex: true,
+      lang: 'en'
+    },
+    es: {
+      title: 'Pago Recibido | Vio La Doula',
+      description: '¡Gracias! Recibí tu pago a Vio La Doula.',
+      keywords: [],
+      ogType: 'website',
+      noindex: true,
+      lang: 'es'
+    }
+  },
   'hypnobirthing-class': {
     en: {
       title: 'Online HypnoBirthing® Group Class | Register | Vio La Doula',
@@ -363,7 +381,8 @@ export const pagePaths = {
   subscribe: '/subscribe',
   terms: '/terms-of-service',
   privacy: '/privacy-policy',
-  'hypnobirthing-class': '/hypnobirthing-class'
+  'hypnobirthing-class': '/hypnobirthing-class',
+  'payment-success': '/payment-success'
 } as const;
 
 export type PageKey = keyof typeof pagePaths;

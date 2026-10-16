@@ -290,6 +290,14 @@
       ]
     }
   },
+  "payment_success": {
+    "title": "Thank you, your payment went through!",
+    "class": "Your {{deposit}} deposit for the HypnoBirthing® group class is in. I'll email you to confirm your spot and send the Zoom link. The remaining {{balance}} is due by the first class on {{firstClass}}.",
+    "doula": "Your $1,000 deposit is in, and your doula support is reserved. I'll reach out soon to plan our first prenatal visit. The rest of your package is due by 36 weeks of pregnancy.",
+    "generic": "Your payment was received. I'll be in touch soon.",
+    "receipt": "A receipt from Stripe is on its way to your email.",
+    "questions": "Questions? Email me at"
+  },
   "hb_class": {
     "banner": {
       "badge": "Now enrolling · Online",
@@ -309,6 +317,7 @@
       "steps_title": "How to reserve your spot",
       "step_1": "Fill out the registration form. It takes about a minute.",
       "step_2": "Send your {{deposit}} deposit by Zelle or Venmo. You'll see the instructions right away, and I'll email you a copy.",
+      "step_2_card": "Pay your {{deposit}} deposit by card, Zelle, or Venmo. You'll see the options right away, and I'll email you the Zelle and Venmo details.",
       "step_3": "Once your deposit arrives, I'll confirm your spot by email and send you the Zoom link."
     },
     "form": {
@@ -339,6 +348,7 @@
       "and": "and",
       "privacy_link": "Privacy Policy",
       "no_payment": "No payment is taken on this site. You'll send your deposit directly to me by Zelle or Venmo.",
+      "no_payment_card": "No payment is taken yet. After you register, you can pay your deposit by card, Zelle, or Venmo.",
       "submit": "Register & get deposit instructions",
       "submitting": "Registering...",
       "errors": {

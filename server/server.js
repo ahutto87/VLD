@@ -7,12 +7,12 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
-// What the site's "Pay by card" buttons can buy (their hidden `item` field), mapped to
-// products in the Stripe Dashboard. Each one charges its product's default price, so
-// change amounts in Stripe, not here.
+// What the site's "Pay by card" buttons can buy (their hidden `item` field): the product
+// in the Stripe Dashboard, and the site page to return to if the customer backs out.
+// Each item charges its product's default price, so change amounts in Stripe, not here.
 const PRODUCTS = {
-  hypnobirthing_class_deposit: 'prod_VSAGVj9RBZjZN0', // $100
-  doula_deposit: 'prod_VSA1tUBSJ6cZdH', // $1,000
+  hypnobirthing_class_deposit: { product: 'prod_VSAGVj9RBZjZN0', cancelPath: '/hypnobirthing-class' }, // $100
+  doula_deposit: { product: 'prod_VSA1tUBSJ6cZdH', cancelPath: '/#services' }, // $1,000
 };
 
 app.post('/api/create-checkout-session', express.urlencoded({ extended: false }), async (req, res) => {
@@ -20,9 +20,10 @@ app.post('/api/create-checkout-session', express.urlencoded({ extended: false })
   if (!Object.hasOwn(PRODUCTS, item)) {
     return res.status(400).send('Unknown item');
   }
-  const { default_price: price } = await stripe.products.retrieve(PRODUCTS[item]);
+  const { product, cancelPath } = PRODUCTS[item];
+  const { default_price: price } = await stripe.products.retrieve(product);
   if (!price) {
-    throw new Error(`Stripe product ${PRODUCTS[item]} has no default price`);
+    throw new Error(`Stripe product ${product} has no default price`);
   }
 
   // TODO: Set mode to "subscription" if selling recurring products.
@@ -38,9 +39,9 @@ app.post('/api/create-checkout-session', express.urlencoded({ extended: false })
     integration_identifier: 'hosted_web_0001',
     origin_context: 'web',
     mode,
-    // TODO: Replace the placeholder URLs below; see STRIPE_INTEGRATION_TODO.md
-    success_url: `${process.env.DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${process.env.DOMAIN}`,
+    // The site's /payment-success page shows next steps for the item that was paid
+    success_url: `${process.env.DOMAIN}/payment-success?item=${item}&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${process.env.DOMAIN}${cancelPath}`,
     line_items: [{ price, quantity: 1 }],
     // Tells the webhook which deposit was paid
     metadata: { item },

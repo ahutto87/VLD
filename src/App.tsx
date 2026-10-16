@@ -14,6 +14,7 @@ import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import SubscribePage from './components/SubscribePage';
 import HypnobirthingClassPage from './components/HypnobirthingClassPage';
+import PaymentSuccessPage from './components/PaymentSuccessPage';
 import { pagePaths } from './utils/seo';
 
 // Homepage component with all sections
@@ -46,6 +47,7 @@ function App() {
       <Route path={pagePaths.privacy} element={<PrivacyPolicy />} />
       <Route path={pagePaths.subscribe} element={<SubscribePage />} />
       <Route path={pagePaths['hypnobirthing-class']} element={<HypnobirthingClassPage />} />
+      <Route path={pagePaths['payment-success']} element={<PaymentSuccessPage />} />
     </Routes>
   );
 }

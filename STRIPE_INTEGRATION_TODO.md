@@ -24,12 +24,17 @@ The following values are placeholders and must be updated before going live.
 
 | Field | Current Value | What to Set |
 |-------|--------------|-------------|
-| mode | payment | Set to "payment" for one-time charges or "subscription" for recurring billing. The class deposit is a one-time charge, so `payment` is correct. |
-| success_url | `${DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}` | Your actual post-payment success page URL. Keep the `{CHECKOUT_SESSION_ID}` template. The site has no `/success` page, so a good choice is `${DOMAIN}/hypnobirthing-class?paid=1&session_id={CHECKOUT_SESSION_ID}`. |
-| cancel_url | `${DOMAIN}` | Your actual cancel/return page URL, e.g. `${DOMAIN}/hypnobirthing-class`. |
+| mode | payment | Set to "payment" for one-time charges or "subscription" for recurring billing. Both deposits are one-time charges, so `payment` is correct; nothing to change. |
 | STRIPE_SECRET_KEY | `sk_test_...` | Your API key. A restricted key (`rk_...`) with write access to Checkout Sessions is safer than the full secret key. |
 | STRIPE_WEBHOOK_SECRET | `whsec_...` | The signing secret of your webhook endpoint (see step 4 below). |
-| DOMAIN | `http://localhost:5173` | `https://www.violadoula.com` in production. |
+| DOMAIN | `http://localhost:5173` | `https://www.violadoula.com` in production. The success and cancel URLs are built from it. |
+
+`success_url` and `cancel_url` are done:
+- **success_url:** `${DOMAIN}/payment-success?item=<item>&session_id={CHECKOUT_SESSION_ID}`. This is
+  the site's bilingual thank-you page ([PaymentSuccessPage.tsx](src/components/PaymentSuccessPage.tsx)),
+  and it shows next steps for the deposit that was paid. It's marked `noindex`, so search engines skip it.
+- **cancel_url:** back to the page the button was on: `/hypnobirthing-class` for the class deposit and
+  `/#services` for the doula deposit (`cancelPath` in `PRODUCTS`).
 
 `line_items` is done: the server looks up the product for the chosen `item` (`PRODUCTS` in
 [server/server.js](server/server.js)) and charges that product's **default price**. To change an amount,
@@ -42,6 +47,7 @@ products in live mode, a test key (`sk_test_`/`rk_test_`) gets "No such product"
 matching products in test mode or a sandbox, and put their IDs in `PRODUCTS` while testing. Before
 launch, switch back to the live IDs above. Each product also needs a default price, which Stripe sets
 when you create the product with a price.
+
 ## Configured Parameters
 
 These parameters were configured in Checkout Studio and are already set correctly.
@@ -131,13 +137,15 @@ server/
 ├── package.json     Express + Stripe; `npm start` (production), `npm run dev` (local, reads .env)
 ├── server.js        POST /api/create-checkout-session and POST /api/webhook
 └── .env.example     Environment variables the server needs
-src/utils/checkout.ts  Checkout server URL, the item names, whether the buttons show
+src/utils/checkout.ts                  Checkout server URL, the item names, whether the buttons show
+src/components/PaymentSuccessPage.tsx  /payment-success thank-you page (success_url)
 STRIPE_INTEGRATION_TODO.md
 ```
 
 Changed files: [HypnobirthingClassPage.tsx](src/components/HypnobirthingClassPage.tsx) (class deposit),
-[Services.tsx](src/components/Services.tsx) (doula deposit),
-[en.json](src/i18n/locales/en.json) / [es.json](src/i18n/locales/es.json) (button text),
+[Services.tsx](src/components/Services.tsx) (doula deposit; "$1,000 Deposit" in the Payment Plans card),
+[App.tsx](src/App.tsx) and [seo.ts](src/utils/seo.ts) (the `/payment-success` route),
+[en.json](src/i18n/locales/en.json) / [es.json](src/i18n/locales/es.json) (button and page text),
 [deploy.yml](.github/workflows/deploy.yml) (build variable), [.gitignore](.gitignore) (`.env`).
 
 ## How it works
@@ -149,7 +157,8 @@ Changed files: [HypnobirthingClassPage.tsx](src/components/HypnobirthingClassPag
    price, creates a Checkout Session tagged with `metadata.item`, and answers with a 303 redirect to
    Stripe's hosted payment page. A form POST is a normal page navigation, so the server needs no CORS
    setup.
-3. The customer pays on Stripe, then lands on `success_url`, or on `cancel_url` if they back out.
+3. The customer pays on Stripe, then lands on `/payment-success`. If they back out, they return to the
+   page they came from.
 4. Stripe calls `/api/webhook`. The server verifies the signature and logs the payment, including which
    item was paid, once `payment_status` isn't `unpaid`.
 
@@ -163,8 +172,8 @@ Use test mode keys and these card numbers, with any future expiry date, any CVC,
 | 4000 0025 0000 3155 | Requires 3D Secure authentication |
 | 4000 0000 0000 9995 | Declined (insufficient funds) |
 
-More: https://docs.stripe.com/testing. Switch to live keys (and a live Price ID and webhook secret)
-only after a successful end-to-end test.
+More: https://docs.stripe.com/testing. Switch to live keys (with live product IDs and a live webhook
+secret) only after a successful end-to-end test.
 
 ## Next steps
 
@@ -172,21 +181,21 @@ only after a successful end-to-end test.
   only logs payments. Fill in its `TODO` to act on each payment (`session.metadata.item` says which
   deposit), e.g. email Vio to confirm the class spot or the doula booking. Do this in the
   webhook, not on the success page: customers don't always reach the success page after paying.
-  Stripe can also email Vio about each payment (Dashboard → Settings → Notifications) and send
-  customers receipts (Settings → Customer emails).
+  Stripe can also email Vio about each payment (Dashboard → Settings → Notifications).
+- **Customer receipts:** the thank-you page says a receipt from Stripe is on its way. Turn on
+  **Settings → Customer emails → Successful payments** in the Stripe Dashboard so that's true.
 - **Match payments to registrations:** to see the registrant's email and name on each payment, the
   button could send them to the server, which would pass `customer_email` and `client_reference_id`
   into the session.
-- **Success page:** add a "payment received" message on `/hypnobirthing-class` (or a new route listed in
-  `pagePaths` in `src/utils/seo.ts`) and point `success_url` at it.
 - **Remaining balances:** the $250 class balance and the doula balance could also be paid by card. Add
   a product for each, an entry in `PRODUCTS`, and a button that sends that `item`.
 - **Welcome email:** [email-templates/class-welcome.html](email-templates/class-welcome.html) still lists
   only Zelle and Venmo. Add a card link there once the button is live.
 - **New cohorts:** if the deposit amount changes in `src/utils/hypnobirthingClass.ts`, change the class
   deposit product's default price in Stripe to match.
-- **Services page text:** the "Payment Plans" card still says "50% Deposit — At contract signing". That
-  doesn't match a $1,000 deposit, so update the wording if the deposit is now a flat $1,000.
+- **Doula deposit amount:** "$1,000" is written into the site text (`services.pay_deposit` and
+  `payment_success.doula` in both locale files, and the Payment Plans card in `Services.tsx`). If it
+  changes, update those along with the product's default price in Stripe.
 - Review the go-live checklist: https://docs.stripe.com/get-started/checklist/go-live.md
 
 ## Resources

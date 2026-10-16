@@ -290,6 +290,14 @@
       ]
     }
   },
+  "payment_success": {
+    "title": "¡Gracias, tu pago se realizó con éxito!",
+    "class": "Recibí tu depósito de {{deposit}} para la clase grupal de HypnoBirthing®. Te enviaré un correo para confirmar tu lugar junto con el enlace de Zoom. El saldo restante de {{balance}} se paga antes de la primera clase, el {{firstClass}}.",
+    "doula": "Recibí tu depósito de $1,000 y tu acompañamiento de doula está reservado. Me pondré en contacto pronto para planear nuestra primera visita prenatal. El resto de tu paquete se paga antes de las 36 semanas de embarazo.",
+    "generic": "Recibí tu pago. Me pondré en contacto contigo pronto.",
+    "receipt": "Stripe te enviará un recibo por correo electrónico.",
+    "questions": "¿Preguntas? Escríbeme a"
+  },
   "hb_class": {
     "banner": {
       "badge": "Inscripciones abiertas · En línea",
@@ -309,6 +317,7 @@
       "steps_title": "Cómo reservar tu lugar",
       "step_1": "Llena el formulario de inscripción. Toma alrededor de un minuto.",
       "step_2": "Envía tu depósito de {{deposit}} por Zelle o Venmo. Verás las instrucciones de inmediato y te enviaré una copia por correo.",
+      "step_2_card": "Paga tu depósito de {{deposit}} con tarjeta, Zelle o Venmo. Verás las opciones de inmediato y te enviaré por correo los datos de Zelle y Venmo.",
       "step_3": "En cuanto reciba tu depósito, te confirmaré tu lugar por correo y te enviaré el enlace de Zoom."
     },
     "form": {
@@ -339,6 +348,7 @@
       "and": "y la",
       "privacy_link": "Política de Privacidad",
       "no_payment": "No se cobra ningún pago en este sitio. Me enviarás tu depósito directamente por Zelle o Venmo.",
+      "no_payment_card": "Todavía no se cobra ningún pago. Después de inscribirte, puedes pagar tu depósito con tarjeta, Zelle o Venmo.",
       "submit": "Inscribirme y ver instrucciones de depósito",
       "submitting": "Inscribiendo...",
       "errors": {

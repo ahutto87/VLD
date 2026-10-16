@@ -124,7 +124,7 @@ const Services: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="space-y-2">
-                <div className="text-lg font-semibold text-coral-300">50% Deposit</div>
+                <div className="text-lg font-semibold text-coral-300">$1,000 Deposit</div>
                 <div className="text-sm text-gray-600">At contract signing</div>
               </div>
               <div className="space-y-2">

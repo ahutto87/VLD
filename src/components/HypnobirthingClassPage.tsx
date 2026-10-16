@@ -188,7 +188,7 @@ const HypnobirthingClassPage: React.FC = () => {
 
   const steps = [
     t('hb_class.page.step_1'),
-    t('hb_class.page.step_2', { deposit: details.deposit }),
+    t(isCardPaymentEnabled ? 'hb_class.page.step_2_card' : 'hb_class.page.step_2', { deposit: details.deposit }),
     t('hb_class.page.step_3')
   ];
 
@@ -326,7 +326,9 @@ const HypnobirthingClassPage: React.FC = () => {
           {errors.acceptTerms && <p className="mt-1 text-sm text-red-600">{errors.acceptTerms.message}</p>}
         </div>
 
-        <p className="text-xs text-terracotta/70 leading-relaxed">{t('hb_class.form.no_payment')}</p>
+        <p className="text-xs text-terracotta/70 leading-relaxed">
+          {t(isCardPaymentEnabled ? 'hb_class.form.no_payment_card' : 'hb_class.form.no_payment')}
+        </p>
 
         {submitError && (
           <p role="alert" className="text-sm text-red-600">{t('hb_class.form.errors.submit')}</p>

@@ -68,6 +68,7 @@ src/
 │   ├── HypnobirthingForm.tsx   Course enrollment with validation + EmailJS
 │   ├── HypnobirthingClassPage.tsx   /hypnobirthing-class — group class registration + deposit instructions
 │   ├── HypnobirthingClassBanner.tsx Homepage callout for the group class (hides when registration closes)
+│   ├── PaymentSuccessPage.tsx  /payment-success — thank-you page Stripe Checkout returns to (noindex)
 │   ├── Coaching.tsx            Session types and booking info
 │   ├── DueDateCalculator.tsx   Interactive pregnancy tracking tool
 │   ├── Contact.tsx             Contact form, bilingual FAQ, contact info
@@ -79,6 +80,7 @@ src/
 ├── utils/
 │   ├── emailService.ts         EmailJS integration + auto-reply system
 │   ├── hypnobirthingClass.ts   Current group class cohort: dates, fee/deposit, Zelle/Venmo
+│   ├── checkout.ts             Stripe checkout server URL + item names for the "Pay by card" buttons
 │   ├── navigation.ts           Smooth scrolling, service pre-population
 │   ├── seo.ts                  SEO configs for all pages
 │   └── schemas.ts              JSON-LD structured data schemas
@@ -98,7 +100,7 @@ src/
 - **The Essentials ($2,200):** Unlimited phone/email support, 2 prenatal visits, birth plan, unlimited labor support, postpartum + breastfeeding support, 1 postpartum visit, HypnoBirthing® basics session
 - **The Premium ($2,500):** All Essentials + 3 prenatal visits (vs 2), extra TLC. Marked "Most Popular"
 - All packages include a backup doula
-- Payment: 36-week gestation deadline
+- Payment: flat $1,000 deposit at contract signing (payable by card on the site); balance due by 36 weeks gestation
 
 ### HypnoBirthing® Courses
 - Group sessions: $350
