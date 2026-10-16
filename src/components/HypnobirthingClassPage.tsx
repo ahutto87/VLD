@@ -14,7 +14,8 @@ import {
   Copy,
   Check,
   ExternalLink,
-  Send
+  Send,
+  CreditCard
 } from 'lucide-react';
 import SEOHead from './SEOHead';
 import NewsletterSignup from './NewsletterSignup';
@@ -44,6 +45,9 @@ interface Registration {
   email: string;
   welcomeSent: boolean;
 }
+
+// The Stripe checkout server (server/). Card payment stays hidden until it's set at build time.
+const checkoutServerUrl: string | undefined = import.meta.env.VITE_CHECKOUT_SERVER_URL;
 
 const todayIso = () => {
   const now = new Date();
@@ -362,6 +366,28 @@ const HypnobirthingClassPage: React.FC = () => {
       </p>
 
       <div className="space-y-3 mb-6">
+        {checkoutServerUrl && (
+          <form
+            action={`${checkoutServerUrl.replace(/\/$/, '')}/api/create-checkout-session`}
+            method="POST"
+            className="rounded-2xl border border-coral-200 bg-white/80 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+          >
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-wide text-terracotta/70">
+                {t('hb_class.success.card_label')}
+              </p>
+              <p className="text-xs text-terracotta/70">{t('hb_class.success.card_hint')}</p>
+            </div>
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-coral-300 text-sm font-medium text-white hover:bg-coral-200 transition-colors flex-shrink-0"
+            >
+              <CreditCard className="w-4 h-4" />
+              {t('hb_class.success.pay_card', { deposit: details.deposit })}
+            </button>
+          </form>
+        )}
+
         <div className="rounded-2xl border border-coral-200 bg-white/80 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wide text-terracotta/70">Zelle</p>

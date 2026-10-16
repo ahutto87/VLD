@@ -32,6 +32,10 @@ jobs:
         
       - name: Build
         run: npm run build
+        env:
+          # Stripe checkout server URL (Settings → Secrets and variables → Actions → Variables).
+          # Leave unset to hide the "Pay by card" button.
+          VITE_CHECKOUT_SERVER_URL: ${{ vars.VITE_CHECKOUT_SERVER_URL }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v5

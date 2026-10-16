@@ -351,6 +351,9 @@
     "success": {
       "title": "¡Ya casi estás, {{name}}!",
       "intro": "Para reservar tu lugar, envía tu depósito de {{deposit}} por cualquiera de estas opciones:",
+      "card_label": "Tarjeta de crédito o débito",
+      "card_hint": "Pago seguro con Stripe",
+      "pay_card": "Pagar {{deposit}} con tarjeta",
       "zelle_hint": "Aparece como {{name}}",
       "open_venmo": "Abrir Venmo",
       "copy": "Copiar",

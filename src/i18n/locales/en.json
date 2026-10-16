@@ -350,7 +350,10 @@
     },
     "success": {
       "title": "You're almost in, {{name}}!",
-      "intro": "To reserve your spot, send your {{deposit}} deposit with either option:",
+      "intro": "To reserve your spot, send your {{deposit}} deposit with one of these options:",
+      "card_label": "Credit or debit card",
+      "card_hint": "Secure checkout with Stripe",
+      "pay_card": "Pay {{deposit}} by card",
       "zelle_hint": "Shows as {{name}}",
       "open_venmo": "Open Venmo",
       "copy": "Copy",
